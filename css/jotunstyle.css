@@ -1,0 +1,98 @@
+/**
+
+	This stylesheet is meant to be included after style.css and overrides some of it.
+
+ */
+
+body 
+{ 
+	color: #fff;
+	background: #eee url(../img/textured_tiles_pattern_darker.png);
+	font:17px Helvetica, sans-serif; 
+	*font-size: 17px; 
+} /* Hack retained to preserve specificity */
+
+select, input, textarea, button { font:99% sans-serif; }
+
+
+#container
+{
+	background: url(../img/textured_tiles_pattern_green.png);	
+	width: 832px;
+	height: 3000px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+
+#writeupstrip
+{
+	float: none;
+	padding-top: 40px;
+	padding-right: 40px;
+}
+
+#writeupstrip p
+{
+	padding-bottom: 1em;
+}
+#writeupstrip ul
+{
+	margin-top: 20px;
+	/* Watch out: HACK! Because #writeupstrip is float: none and flowing around #bigandsimplestrip, it really starts at the left of #container, not in a box that starts to the right of #bigandsimplestrip. Update this if #bigandsimplestrip's width changes. */
+	padding-left: 414px;
+}
+
+#writeupstrip li
+{
+	margin-left: 20px;
+}
+
+#bigandsimplestrip
+{
+	float: left;
+	width: 400px;
+	height: 2000px;
+	padding-left: 28px;
+	padding-top: 40px;
+	padding-right: 22px;
+	/*
+	border: 1px dotted black;	
+	*/
+}
+
+.bigandsimpletextsection
+{
+	margin-left: 32px;	
+}
+
+#appstorebadge
+{
+	display: block;
+	margin-top: 64px;
+	margin-left: 64px;	
+}
+
+.heading
+{
+	font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Helvetica, sans-serif;
+	font-weight: bold;
+}
+
+h1
+{
+	font-size: 48px;
+	padding-top: 48px;
+	padding-bottom: 40px;
+}
+
+h2
+{
+	font-size: 30px;
+	padding-bottom: 40px;
+}
+
+h3
+{
+	font-size: 24px;	
+}
