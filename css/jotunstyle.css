@@ -22,7 +22,7 @@ select, input, textarea, button { font:99% sans-serif; }
 	height: 3000px;
 	margin-top: 0px;
 	margin-bottom: 0px;
-	box-shadow: -5px 0px 2px #888, 5px 0px 2px #888;
+	box-shadow: -5px 0px 2px #999, 5px 0px 2px #999;
 }
 
 
