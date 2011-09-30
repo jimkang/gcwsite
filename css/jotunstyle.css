@@ -99,6 +99,8 @@ h3
 }
 
 
+/* Slideshow stuff. */
+
 #overlay {
   position: fixed;
   top: 0;
@@ -115,5 +117,56 @@ h3
 }
 
 #overlay.visible {
+  opacity: 1;
+}
+
+
+#photo-container {
+  width: 480px;
+  height: 480px;
+}
+
+#photo-container img, #photo-container video {
+}
+
+#photo-container video {
+  background-color: black;
+}
+
+#photo-container > .contents {
+  -webkit-transform-style: preserve-3d;
+}
+
+
+/* --------------------------- swipe --------------------------------- */
+
+#photo-container.swipe > * {
+  -webkit-transition-property: -webkit-transform, opacity;
+  -webkit-transition-duration: 1000ms;
+}
+
+#photo-container.swipe.slowmode > * {
+  -webkit-transition-duration: 5000ms;
+}
+
+/* initial state */
+#photo-container.swipe.initial .outgoing {
+  -webkit-transform: translateX(0);
+  opacity: 1;
+}
+
+#photo-container.swipe.initial .incoming {
+  -webkit-transform: translateX(100%);
+  opacity: 0;
+}
+
+/* final state */
+#photo-container.swipe.final .outgoing {
+  -webkit-transform: translateX(0);
+  opacity: 1;
+}
+
+#photo-container.swipe.final .incoming {
+  -webkit-transform: translateX(0);
   opacity: 1;
 }
