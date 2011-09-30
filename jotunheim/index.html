@@ -42,7 +42,7 @@
 
 	<div id="bigandsimplestrip">
 		<p>
-			<img src="img/jotunheim_screenshot_in_frame.png" alt="Jotunheim screenshot." />
+			<img src="img/jotunheim_screenshot_in_frame.png" alt="Jotunheim screenshot." class="overlayTrigger" />
 		</p>
 		<section class="bigandsimpletextsection">
 			<p>
@@ -67,7 +67,7 @@
 					Sometimes, the answer is that you don't have anything on hand to save them. Or, it's just too much effort to share them with the people to which you'd like them to go.
 		</p>
 		<p>
-					Well, how about this, friend: Jotunheim can be with you <strong><em>at all times</em></strong>, and your thoughts can go there. Just pull out your phone and write or photograph. And with a tap, they can go from Jotunheim, to pretty much wherever you'd like!
+					Well, how about this, friend: Jotunheim can be with you <strong><em>at all times</em></strong>, and your thoughts can go there. Just pull out your phone and write or photograph. And with a tap, they can go from Jotunheim to pretty much wherever you'd like!
 		</p>
 		<p>
 			<h2 class="heading">Post everywhere you want.</h2>
@@ -96,6 +96,18 @@
     </footer>
   </div> <!--! end of #container -->
 
+  <!-- This is the overlay that will contain the photo gallery -->
+  <div id="overlay" class="hidden">
+    <div id="gallery-container">
+      <div id="thumbs">
+        <div id="thumb-scroller"></div>
+      </div>
+      <div class="flipper">
+        <div id="photo-container"></div>
+      </div>
+    </div>
+  </div>
+
 
   <!-- JavaScript at the bottom for fast page loading -->
 
@@ -107,8 +119,10 @@
   <!-- scripts concatenated and minified via ant build script-->
   <script src="../js/plugins.js"></script>
   <script src="../js/script.js"></script>
-  <!-- end scripts-->
 
+  <!-- end scripts-->
+  <script src="../js/mylibs/utilities.js"></script>
+  <script src="../js/photo_gallery.js"></script>
 
   <!--[if lt IE 7 ]>
     <script src="../js/libs/dd_belatedpng.js"></script>

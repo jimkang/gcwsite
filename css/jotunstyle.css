@@ -97,3 +97,23 @@ h3
 {
 	font-size: 24px;	
 }
+
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  opacity: 0;
+  -webkit-transition: opacity 0.75s;
+}
+
+#overlay.hidden {
+  display: none;
+}
+
+#overlay.visible {
+  opacity: 1;
+}
