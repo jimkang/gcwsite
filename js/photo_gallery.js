@@ -88,7 +88,7 @@ function createElementForAssetAtIndex(assetIndex)
     	// If the asset has an image extension, make an image element.
     	mediaElement = new Image();
     	// Register a load listener; when it fires, our handleEvent() method will get called.
-    	mediaElement.addEventListener('load', this, false);
+    	//mediaElement.addEventListener('load', this, false);
     	mediaElement.src = "img/" + photoData.filename;
 		mediaElement.width = photoData.width;
 		mediaElement.height = photoData.height;
