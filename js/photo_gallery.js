@@ -33,55 +33,58 @@ function decrementPhotoIndex()
 	}	
 }
 
-var gShouldAnimateRings = true;
 function animateRing(ring)
 {
-	if (gShouldAnimateRings)
+	gRingIntervalId = window.setInterval(function() 
 	{
-		gRingIntervalId = window.setInterval(function() 
-		{
-			// Now it's done animating, so reset. 			 
-			ring.removeClassName("expandedTriggerRing");
-			
-			if (navigator.appName.indexOf("Netscape" != -1))
-			{
-				// Destroy and recreate the node.
-				var parent = ring.parentNode;
-				var newRing = document.createElement('img');
-				newRing.src = ring.src;
-				
-				parent.removeChild(ring);
-				parent.appendChild(newRing)				
-				newRing.addClassName("triggerRing");
-				ring = newRing;
-			}
-			// And start the animation again.
-		  	// The "setTimeout" ensures that the initial style is rendered, and hence allows the transition to run.
-			window.setTimeout(function() 
-			{
-				ring.addClassName("expandedTriggerRing");
-			}, 0);						
-		}, 1600);
+		// Now it's done animating, so reset. 			 
+		ring.removeClassName("expandedTriggerRing");
 		
-		// Kick off animation.
-		ring.addClassName("expandedTriggerRing");
-	}
+		if (navigator.appName.indexOf("Netscape" != -1))
+		{
+			// Destroy and recreate the node.
+			var parent = ring.parentNode;
+			var newRing = document.createElement('img');
+			newRing.src = ring.src;
+			
+			parent.removeChild(ring);
+			parent.appendChild(newRing)				
+			newRing.addClassName("triggerRing");
+			ring = newRing;
+		}
+		// And start the animation again.
+	  	// The "setTimeout" ensures that the initial style is rendered, and hence allows the transition to run.
+		window.setTimeout(function() 
+		{
+			ring.addClassName("expandedTriggerRing");
+		}, 0);						
+	}, 1600);
+	
+	// Kick off animation.
+	ring.addClassName("expandedTriggerRing");
 }
 
 function setUpRingAnimation()
 {
-	if (gShouldAnimateRings)
-	{
-	  	var rings = document.querySelectorAll('.triggerRing');
-		// 	  	for (var i = 0; i < rings.length; ++i) 
-		// {
-		// 	    	animateRing(rings[i]);		
-		// }		
-		// Right now, we're only handling one.
-		animateRing(rings[0]);
-	}
+  	var rings = document.querySelectorAll('.triggerRing');
+	// 	  	for (var i = 0; i < rings.length; ++i) 
+	// {
+	// 	    	animateRing(rings[i]);		
+	// }		
+	// Right now, we're only handling one.
+	animateRing(rings[0]);
 }
 
+function takeDownRingAnimationForever()
+{
+	// Clear the resetter.
+	window.clearInterval(gRingIntervalId);
+	gRingIntervalId = null;
+	// Hide the ring.
+  	var rings = document.querySelectorAll('.triggerRing');
+	// Right now, we're only handling one.
+	rings[0].style.opacity = 0;
+}
 
 function showOverlay()
 {
@@ -177,6 +180,7 @@ function triggerClicked()
   // gGallery = new Gallery(galleryContainer);
 
 	showOverlay();
+	takeDownRingAnimationForever();
 }
 
 function photoContainerClicked(event)
