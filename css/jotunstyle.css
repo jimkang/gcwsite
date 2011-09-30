@@ -199,6 +199,88 @@ footer
 }
 
 
+
+/* Mobile */
+
+@media only screen and (max-width: 500px) 
+{
+  	/* rules that only apply for canvases narrower than 500px */
+	#container
+	{
+		width: 480px;
+		height: 100%;
+	}
+	#bigandsimplestrip
+	{
+		float: none;
+		width: 480px;
+		height: 680px;
+		padding-left: 28px;
+		padding-top: 40px;
+		padding-right: 18px;		
+	}
+
+	.bigandsimpletextsection
+	{
+		margin-left: 8px;	
+	}
+	
+	#writeupstrip
+	{
+		padding-right: 0px;
+		width: 80%;
+		margin: 0 auto auto;
+	}	
+	
+	#writeupstrip ul
+	{
+		padding-left: 0px;
+	}
+
+	h1
+	{
+		font-size: 36px;
+		padding-top: 36px;
+		padding-bottom: 30px;
+	}
+
+	h2
+	{
+		font-size: 20px;
+		padding-bottom: 20px;
+	}
+
+	h3
+	{
+		font-size: 18px;	
+	}
+
+	
+}
+
+@media only screen and (max-width: 321px) 
+{
+  	/* rules that only apply for canvases narrower than 500px */
+	#container
+	{
+		width: 320px;
+		height: 100%;
+	}
+	#bigandsimplestrip
+	{
+		float: none;
+		width: 320px;
+	}
+	#framedscreenshot
+	{
+		background: url(../jotunheim/img/jotunheim_screenshot_in_frame_smaller.png);		
+		width: 256px;
+		height: 510px;	
+	}	
+}
+
+
+
 /* --------------------------- swipe --------------------------------- */
 
 #photo-container.swipe > * {
