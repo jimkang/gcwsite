@@ -13,6 +13,7 @@ var gPhotos =
 
 var gPhotoIndex = 0;
 var photoCount = 7;
+var gRingIntervalId = null;
 
 function incrementPhotoIndex()
 {
@@ -30,6 +31,55 @@ function decrementPhotoIndex()
 	{
 		gPhotoIndex = photoCount - 1;
 	}	
+}
+
+var gShouldAnimateRings = true;
+function animateRing(ring)
+{
+	if (gShouldAnimateRings)
+	{
+		gRingIntervalId = window.setInterval(function() 
+		{
+			// Now it's done animating, so reset. 			 
+			ring.removeClassName("expandedTriggerRing");
+			
+			if (navigator.appName.indexOf("Netscape" != -1))
+			{
+				// Destroy and recreate the node.
+				var parent = ring.parentNode;
+				var newRing = document.createElement('img');
+				newRing.src = ring.src;
+				
+				parent.removeChild(ring);
+				parent.appendChild(newRing)				
+				newRing.addClassName("triggerRing");
+				ring = newRing;
+			}
+			// And start the animation again.
+		  	// The "setTimeout" ensures that the initial style is rendered, and hence allows the transition to run.
+			window.setTimeout(function() 
+			{
+				ring.addClassName("expandedTriggerRing");
+			}, 0);						
+		}, 1600);
+		
+		// Kick off animation.
+		ring.addClassName("expandedTriggerRing");
+	}
+}
+
+function setUpRingAnimation()
+{
+	if (gShouldAnimateRings)
+	{
+	  	var rings = document.querySelectorAll('.triggerRing');
+		// 	  	for (var i = 0; i < rings.length; ++i) 
+		// {
+		// 	    	animateRing(rings[i]);		
+		// }		
+		// Right now, we're only handling one.
+		animateRing(rings[0]);
+	}
 }
 
 
@@ -98,7 +148,7 @@ function createElementForAssetAtIndex(assetIndex)
 	return container;
 }
 
-function setUpTouchables()
+function setUp()
 {
   	var triggerElements = document.querySelectorAll('.overlayTrigger');
   	for (var i = 0; i < triggerElements.length; ++i) 
@@ -116,7 +166,9 @@ function setUpTouchables()
 	$('#photo-container').bind('click', photoContainerClicked);
 	//   	var photoContainer = document.getElementById('photo-container');
 	// photoContainer.addEventListener('click', showNextPhoto.bind(this, photoContainer), false);
-	
+
+	// Get ring animation going.
+	setUpRingAnimation();
 }
 
 function triggerClicked()
@@ -135,4 +187,4 @@ function photoContainerClicked(event)
 }
 
 // The preferred way to call a function when the page loads.
-window.addEventListener('load', setUpTouchables, false);
+window.addEventListener('load', setUp, false);

@@ -74,6 +74,44 @@ select, input, textarea, button { font:99% sans-serif; }
 	margin-left: 64px;	
 }
 
+#framedscreenshot
+{
+	background: url(../jotunheim/img/jotunheim_screenshot_in_frame.png);	
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 380px;
+	height: 757px;	
+}
+
+.overlayTrigger
+{
+	
+}
+
+.triggerRing
+{
+	display: block;
+	margin: 0px auto auto;
+	padding-top: 198px;
+	width: 16px;
+	height: 16px;
+	opacity: 0.5;
+}
+
+.expandedTriggerRing
+{
+	display: block;
+	margin: 0px auto auto;
+	padding-top: 174px;
+	width: 64px;
+	height: 64px;
+	opacity: 0.1;
+	-webkit-transition: all 1.5s linear;
+	-webkit-transition-property: width, height, padding-top, opacity;
+	-moz-transition: all 1.5s linear;
+	-moz-transition-property: width, height, padding-top, opacity;	
+}
+
 .heading
 {
 	font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Helvetica, sans-serif;
