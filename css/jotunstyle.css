@@ -19,7 +19,7 @@ select, input, textarea, button { font:99% sans-serif; }
 {
 	background: url(../img/textured_tiles_pattern_green.png);	
 	width: 832px;
-	height: 1600px;
+	height: 1675px;
 	margin-top: 0px;
 	margin-bottom: 0px;
 	box-shadow: -5px 0px 2px #999, 5px 0px 2px #999;
@@ -92,17 +92,17 @@ select, input, textarea, button { font:99% sans-serif; }
 {
 	display: block;
 	margin: 0px auto auto;
-	padding-top: 198px;
+	padding-top: 386px;
 	width: 16px;
 	height: 16px;
-	opacity: 0.5;
+	opacity: 0.6;
 }
 
 .expandedTriggerRing
 {
 	display: block;
 	margin: 0px auto auto;
-	padding-top: 174px;
+	padding-top: 362px;
 	width: 64px;
 	height: 64px;
 	opacity: 0.1;
