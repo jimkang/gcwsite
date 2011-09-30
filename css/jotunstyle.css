@@ -14,12 +14,21 @@ body
 
 select, input, textarea, button { font:99% sans-serif; }
 
+a, a:active, a:visited 
+{ 
+	color: #fff; 
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 110%;
+}
+a:hover { color: #6b6; }
+
 
 #container
 {
 	background: url(../img/textured_tiles_pattern_green.png);	
 	width: 832px;
-	height: 1675px;
+	height: 2080px;
 	margin-top: 0px;
 	margin-bottom: 0px;
 	box-shadow: -5px 0px 2px #999, 5px 0px 2px #999;
@@ -47,7 +56,14 @@ select, input, textarea, button { font:99% sans-serif; }
 #writeupstrip li
 {
 	margin-left: 20px;
+	padding-bottom: 0.3em;
 }
+
+#writeupstrip section
+{
+	margin-bottom: 2em;
+}
+
 
 #bigandsimplestrip
 {
