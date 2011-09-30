@@ -112,6 +112,7 @@ function setUpTouchables()
 	var overlay = document.getElementById('overlay');
 	overlay.addEventListener('click', hideOverlay.bind(this, overlay), false);
 	
+	// Using jQuery so that the handler gets the event and can stop propagation.
 	$('#photo-container').bind('click', photoContainerClicked);
 	//   	var photoContainer = document.getElementById('photo-container');
 	// photoContainer.addEventListener('click', showNextPhoto.bind(this, photoContainer), false);

@@ -122,11 +122,14 @@ h3
 
 
 #photo-container {
-  width: 480px;
-  height: 480px;
+  	width: 480px;
+  	height: 480px;
+	margin: 15% auto auto auto;
 }
 
 #photo-container img, #photo-container video {
+	margin: 0px auto auto auto;
+	display: block;
 }
 
 #photo-container video {
