@@ -19,7 +19,7 @@ select, input, textarea, button { font:99% sans-serif; }
 {
 	background: url(../img/textured_tiles_pattern_green.png);	
 	width: 832px;
-	height: 3000px;
+	height: 1600px;
 	margin-top: 0px;
 	margin-bottom: 0px;
 	box-shadow: -5px 0px 2px #999, 5px 0px 2px #999;
@@ -53,7 +53,7 @@ select, input, textarea, button { font:99% sans-serif; }
 {
 	float: left;
 	width: 400px;
-	height: 2000px;
+	height: 1500px;
 	padding-left: 28px;
 	padding-top: 40px;
 	padding-right: 22px;
@@ -136,6 +136,10 @@ h3
 	font-size: 24px;	
 }
 
+footer
+{
+	margin-top: 40%;
+}
 
 /* Slideshow stuff. */
 
