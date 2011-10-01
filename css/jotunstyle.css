@@ -180,9 +180,13 @@ footer
 
 
 #photo-container {
-  	width: 480px;
+  	width: 800px;
   	height: 480px;
 	margin: 15% auto auto auto;
+	
+	/* Without this, its descendents cannot be absolute without using the 
+	page as a basis for its positioning. */
+	position: relative;	
 }
 
 #photo-container img, #photo-container video {
