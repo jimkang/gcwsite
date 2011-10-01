@@ -164,7 +164,8 @@ body, select, input, textarea {
 /* Headers (h1, h2, etc) have no default font-size or margin; define those yourself */
 h1, h2, h3, h4, h5, h6 { font-weight: bold; }
 
-a, a:active, a:visited { color: #607890; }
+a, a:active { color: #000; }
+a:visited { color: #607890; }
 a:hover { color: #036; }
 
 
@@ -236,6 +237,7 @@ header h1
     padding-right: 14px;
     width: 180px;
     text-align: right;
+	color: #222;
 }
 .productpagelink:hover
 {
@@ -243,7 +245,7 @@ header h1
 }
 .productpagelink:visited
 {
-    color: black;
+    color: #555;
 }
 
 
