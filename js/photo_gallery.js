@@ -86,15 +86,29 @@ function takeDownRingAnimationForever()
 	rings[0].style.opacity = 0;
 }
 
+function setUpArrowHandlers()
+{
+	var leftArrow = document.getElementById('leftArrow');
+	var rightArrow = document.getElementById('rightArrow');
+
+	$(leftArrow).unbind('click');	
+	$(rightArrow).unbind('click');	
+
+	$(leftArrow).bind('click', prevPhotoTriggerClicked);	
+	$(rightArrow).bind('click', nextPhotoTriggerClicked);	
+	console.log("Set up arrow handlers.");
+}
+
 function showOverlay()
 {
-  var overlay = document.getElementById('overlay');
-  overlay.removeClassName('hidden');
-  // The "setTimeout" ensures that the initial style is rendered, and hence allows the transition to run.
-  window.setTimeout(function() {
-    overlay.addClassName('visible');
-	showNextPhoto();
-  }, 0);
+	var overlay = document.getElementById('overlay');
+	overlay.removeClassName('hidden');
+	// The "setTimeout" ensures that the initial style is rendered, and hence allows the transition to run.
+	window.setTimeout(function() 
+	{
+		overlay.addClassName('visible');
+		advanceThePhoto(function() {});
+	}, 0);
 }
 
 function hideOverlay()
@@ -113,15 +127,25 @@ function hideOverlay()
 // 	return overlay.hasClassName('visible');
 // }
 
-function showNextPhoto()
+function advanceThePhoto(indexIncrementFunction)
 {		
-  	var photoContainer = document.getElementById('photo-container');
-  	photoContainer.removeAllChildren();
+  	var contents = document.getElementById('theContainerContents');
+  	contents.removeAllChildren();
 
- 	var newContent = createElementForAssetAtIndex(gPhotoIndex);
-	incrementPhotoIndex();
+	indexIncrementFunction();
+ 	var newElement = createElementForAssetAtIndex(gPhotoIndex);
 	
-  	photoContainer.appendChild(newContent);	
+  	contents.appendChild(newElement);
+
+	// Position arrows.
+	var leftArrow = document.getElementById('leftArrow');
+	var rightArrow = document.getElementById('rightArrow');
+	leftArrow.style.left = 
+	((contents.offsetWidth - newElement.width)/2 - leftArrow.width - 32) + "px";
+	leftArrow.style.top = (contents.offsetHeight/2 - leftArrow.height/2) + "px";	
+	rightArrow.style.left = 
+	(contents.offsetWidth - (contents.offsetWidth - newElement.width)/2 + 32) + "px";
+	rightArrow.style.top = (contents.offsetHeight/2 - rightArrow.height/2) + "px";	
 }
 
 function createElementForAssetAtIndex(assetIndex)
@@ -129,10 +153,7 @@ function createElementForAssetAtIndex(assetIndex)
 	if (assetIndex < 0 || assetIndex >= photoCount)
 	{
  		return undefined;
-	
 	}
-	var container = document.createElement('div');
-	container.className = 'contents';
 
 	var photoData = gPhotos[assetIndex];
 	var mediaElement;
@@ -147,11 +168,10 @@ function createElementForAssetAtIndex(assetIndex)
 		mediaElement.height = photoData.height;
 		
 		// Using jQuery so that the handler gets the event and can stop propagation.
-		$(mediaElement).bind('click', photoClicked);		
+		$(mediaElement).bind('click', nextPhotoTriggerClicked);
 	} 
 
-	container.appendChild(mediaElement);
-	return container;
+	return mediaElement;
 }
 
 function setUp()
@@ -168,11 +188,10 @@ function setUp()
 	var overlay = document.getElementById('overlay');
 	overlay.addEventListener('click', hideOverlay.bind(this, overlay), false);
 	
-	//   	var photoContainer = document.getElementById('photo-container');
-	// photoContainer.addEventListener('click', showNextPhoto.bind(this, photoContainer), false);
-
 	// Get ring animation going.
 	setUpRingAnimation();
+	
+	setUpArrowHandlers();
 }
 
 function triggerClicked()
@@ -184,10 +203,17 @@ function triggerClicked()
 	takeDownRingAnimationForever();
 }
 
-function photoClicked(event)
+function nextPhotoTriggerClicked(event)
 {
+	console.log("nextPhotoTriggerClicked.");
 	// event.stopPropagation();
-	showNextPhoto();
+	advanceThePhoto(incrementPhotoIndex);
+	return false; // Equivalent to event.stopPropagation.
+}
+
+function prevPhotoTriggerClicked(event)
+{
+	advanceThePhoto(decrementPhotoIndex);
 	return false; // Equivalent to event.stopPropagation.
 }
 

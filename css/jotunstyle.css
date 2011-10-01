@@ -189,13 +189,22 @@ footer
 	position: relative;	
 }
 
-#photo-container img, #photo-container video {
-	margin: 0px auto auto auto;
+#photo-container .contents img, #photo-container video {
+	margin: auto auto auto auto;
 	display: block;
 }
 
 #photo-container video {
   background-color: black;
+}
+
+.arrow
+{
+	display: block;
+	position: absolute;
+	top: 220px;
+	/* Without this, it considers this to be under the overlay and clicks won't be caught. */
+	z-index: 2;
 }
 
 #photo-container > .contents {
