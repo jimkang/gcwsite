@@ -251,7 +251,7 @@ footer
 	{
 		margin-left: 8px;	
 	}
-	
+		
 	#writeupstrip
 	{
 		padding-right: 0px;
@@ -288,6 +288,7 @@ footer
 		background: url(../jotunheim/img/jotunheim_screenshot_in_frame_smaller.png);		
 		width: 256px;
 		height: 510px;	
+		margin-left: 83px;
 	}
 
 	#overlay 
@@ -299,7 +300,7 @@ footer
 	#photo-container 
 	{
 		position: relative;
-		margin-left: 0px;
+		margin-left: 80px;
 		margin-top: 0px;
 	  	width: 320px;
 	  	height: 360px;
@@ -320,12 +321,20 @@ footer
 
 @media only screen and (max-width: 321px) 
 {
-  	/* rules that only apply for canvases narrower than 500px */
+  	/* rules that only apply for canvases narrower than 321px */
 	#container
 	{
 		width: 320px;
 		height: 100%;
 	}
+	#framedscreenshot
+	{
+		margin-left: 3px;
+	}	
+	#photo-container 
+	{
+		margin-left: 0px;
+	}	
 	#bigandsimplestrip
 	{
 		float: none;
