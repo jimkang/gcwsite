@@ -6,13 +6,13 @@ if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)
 {
 	gPhotos = 
 	[
-		{filename: "jotsview_screenshot.png", width: 200, height: 300},
-		{filename: "editorviewlandscape_screenshot.png", width: 300, height: 200},
-		{filename: "outletselection_screenshot.png", width: 200, height: 300},
-		{filename: "imageeditor_screenshot.png", width: 200, height: 300},
-		{filename: "jotsviewhelp_screenshot.png", width: 200, height: 300},
-		{filename: "dataliberation_screenshot.png", width: 200, height: 300},
-		{filename: "search_screenshot.png",width: 200, height: 300}
+		{filename: "jotsview_screenshot_small.png", width: 200, height: 300},
+		{filename: "editorviewlandscape_screenshot_small.png", width: 300, height: 200},
+		{filename: "outletselection_screenshot_small.png", width: 200, height: 300},
+		{filename: "imageeditor_screenshot_small.png", width: 200, height: 300},
+		{filename: "jotsviewhelp_screenshot_small.png", width: 200, height: 300},
+		{filename: "dataliberation_screenshot_small.png", width: 200, height: 300},
+		{filename: "search_screenshot_small.png",width: 200, height: 300}
 	];	
 }
 else
@@ -195,7 +195,7 @@ function createElementForAssetAtIndex(assetIndex)
 		
 		// Using jQuery so that the handler gets the event and can stop propagation.
 		$(mediaElement).bind('click', nextPhotoTriggerClicked);
-	} 
+	}
 
 	return mediaElement;
 }
