@@ -251,7 +251,13 @@ footer
 	{
 		margin-left: 8px;	
 	}
-		
+	
+	.triggerRing
+	{
+		padding-top: 30%;
+	}
+
+			
 	#writeupstrip
 	{
 		padding-right: 0px;
@@ -340,6 +346,10 @@ footer
 		float: none;
 		width: 320px;
 	}
+	.triggerRing
+	{
+		padding-top: 93%;
+	}	
 }
 
 
