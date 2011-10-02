@@ -282,7 +282,40 @@ footer
 		font-size: 18px;	
 	}
 
+	#framedscreenshot
+	{
+		position: relative;
+		background: url(../jotunheim/img/jotunheim_screenshot_in_frame_smaller.png);		
+		width: 256px;
+		height: 510px;	
+	}
+
+	#overlay 
+	{	
+		height: 10000px;
+		width: 10000px;
+	}
 	
+	#photo-container 
+	{
+		position: relative;
+		margin-left: 0px;
+		margin-top: 0px;
+	  	width: 320px;
+	  	height: 360px;
+	}
+	
+	#photo-container .contents 
+	{
+		display: block;
+		position: relative;
+		z-index: 2;
+	}
+
+	#photo-container .contents img, #photo-container video 
+	{
+		z-index: 3;
+	}	
 }
 
 @media only screen and (max-width: 321px) 
@@ -298,12 +331,6 @@ footer
 		float: none;
 		width: 320px;
 	}
-	#framedscreenshot
-	{
-		background: url(../jotunheim/img/jotunheim_screenshot_in_frame_smaller.png);		
-		width: 256px;
-		height: 510px;	
-	}	
 }
 
 

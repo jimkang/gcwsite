@@ -17,7 +17,7 @@
   <meta name="author" content="Jim Kang">
 
   <!-- Mobile viewport optimized: j.mp/bplateviewport -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
   <!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
   <link rel="shortcut icon" href="../../favicon.png">
@@ -128,9 +128,9 @@
 
   <!-- This is the overlay that will contain the photo gallery -->
 	<div id="overlay" class="hidden">
-		<img src="img/arrow_left.png" alt="Previous screenshot" />
-		<div id="photo-container"></div>
-		<img src="img/arrow_right.png" alt="Next screenshot" />
+		<div id="photo-container">
+			<div class="contents" id="theContainerContents"></div>
+		</div>
     </div>
   </div>
 

@@ -1,15 +1,33 @@
 // Depends on utlities.js.
 
-var gPhotos = 
-[
-	{filename: "jotsview_screenshot.png", width: 320, height: 480},
-	{filename: "editorviewlandscape_screenshot.png", width: 480, height: 320},
-	{filename: "outletselection_screenshot.png", width: 320, height: 480},
-	{filename: "imageeditor_screenshot.png", width: 320, height: 480},
-	{filename: "jotsviewhelp_screenshot.png", width: 320, height: 480},
-	{filename: "dataliberation_screenshot.png", width: 320, height: 480},
-	{filename: "search_screenshot.png",width: 320, height: 480}
-];
+var gPhotos = [];
+
+if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) 
+{
+	gPhotos = 
+	[
+		{filename: "jotsview_screenshot.png", width: 200, height: 300},
+		{filename: "editorviewlandscape_screenshot.png", width: 300, height: 200},
+		{filename: "outletselection_screenshot.png", width: 200, height: 300},
+		{filename: "imageeditor_screenshot.png", width: 200, height: 300},
+		{filename: "jotsviewhelp_screenshot.png", width: 200, height: 300},
+		{filename: "dataliberation_screenshot.png", width: 200, height: 300},
+		{filename: "search_screenshot.png",width: 200, height: 300}
+	];	
+}
+else
+{
+	gPhotos = 
+	[
+		{filename: "jotsview_screenshot.png", width: 320, height: 480},
+		{filename: "editorviewlandscape_screenshot.png", width: 480, height: 320},
+		{filename: "outletselection_screenshot.png", width: 320, height: 480},
+		{filename: "imageeditor_screenshot.png", width: 320, height: 480},
+		{filename: "jotsviewhelp_screenshot.png", width: 320, height: 480},
+		{filename: "dataliberation_screenshot.png", width: 320, height: 480},
+		{filename: "search_screenshot.png",width: 320, height: 480}
+	];
+}
 
 var gPhotoIndex = 0;
 var photoCount = 7;
@@ -108,6 +126,12 @@ function showOverlay()
 	{
 		overlay.addClassName('visible');
 		advanceThePhoto(function() {});
+		
+		// Scroll it into view on the iPhone.
+		if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) 
+		{
+			window.scrollTo(0, 0);
+		}
 	}, 0);
 }
 
@@ -136,10 +160,18 @@ function advanceThePhoto(indexIncrementFunction)
  	var newElement = createElementForAssetAtIndex(gPhotoIndex);
 	
   	contents.appendChild(newElement);
-
 	// Center element within contents div.
 	newElement.style.left = ((contents.offsetWidth - newElement.width)/2) + "px";
-	newElement.style.top = ((contents.offsetHeight - newElement.height)/2) + "px";
+	
+	var topNumber = ((contents.offsetHeight - newElement.height)/2);
+	
+	if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) 
+	{
+		// Account for the nav bar.
+		topNumber += 32;
+	}
+	
+	newElement.style.top = topNumber + "px";		
 }
 
 function createElementForAssetAtIndex(assetIndex)
@@ -188,6 +220,22 @@ function setUp()
 	setUpArrowHandlers();
 }
 
+function setUpForMobile()
+{
+  	var triggerElements = document.querySelectorAll('.overlayTrigger');
+  	for (var i = 0; i < triggerElements.length; ++i) 
+	{
+    	var curElement = triggerElements[i];
+    	curElement.addEventListener('click', triggerClicked.bind(this, curElement), false);
+	}
+	
+	var overlay = document.getElementById('overlay');
+	overlay.addEventListener('click', hideOverlay.bind(this, overlay), false);
+	
+	// Get ring animation going.
+	setUpRingAnimation();
+}
+
 function triggerClicked()
 {	
   // var galleryContainer = document.getElementById('gallery-container');
@@ -212,4 +260,11 @@ function prevPhotoTriggerClicked(event)
 }
 
 // The preferred way to call a function when the page loads.
-window.addEventListener('load', setUp, false);
+if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) 
+{
+	window.addEventListener('load', setUpForMobile, false);
+}
+else
+{
+	window.addEventListener('load', setUp, false);	
+}
