@@ -191,6 +191,7 @@ footer
 
 #photo-container .contents img, #photo-container video {
 	margin: auto auto auto auto;
+	position: absolute;
 	display: block;
 }
 
@@ -202,13 +203,26 @@ footer
 {
 	display: block;
 	position: absolute;
-	top: 220px;
+	top: 208px;
 	/* Without this, it considers this to be under the overlay and clicks won't be caught. */
 	z-index: 2;
 }
 
+#leftArrow
+{
+	left: 100px;
+}
+
+#rightArrow
+{
+	left: 635px;
+}
+
 #photo-container > .contents {
-  -webkit-transform-style: preserve-3d;
+  	-webkit-transform-style: preserve-3d;
+	position: relative;
+	display: block;
+	height: 100%;
 }
 
 

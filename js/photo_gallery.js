@@ -137,15 +137,9 @@ function advanceThePhoto(indexIncrementFunction)
 	
   	contents.appendChild(newElement);
 
-	// Position arrows.
-	var leftArrow = document.getElementById('leftArrow');
-	var rightArrow = document.getElementById('rightArrow');
-	leftArrow.style.left = 
-	((contents.offsetWidth - newElement.width)/2 - leftArrow.width - 32) + "px";
-	leftArrow.style.top = (contents.offsetHeight/2 - leftArrow.height/2) + "px";	
-	rightArrow.style.left = 
-	(contents.offsetWidth - (contents.offsetWidth - newElement.width)/2 + 32) + "px";
-	rightArrow.style.top = (contents.offsetHeight/2 - rightArrow.height/2) + "px";	
+	// Center element within contents div.
+	newElement.style.left = ((contents.offsetWidth - newElement.width)/2) + "px";
+	newElement.style.top = ((contents.offsetHeight - newElement.height)/2) + "px";
 }
 
 function createElementForAssetAtIndex(assetIndex)
