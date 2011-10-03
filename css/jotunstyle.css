@@ -351,38 +351,3 @@ footer
 		padding-top: 93%;
 	}	
 }
-
-
-
-/* --------------------------- swipe --------------------------------- */
-
-#photo-container.swipe > * {
-  -webkit-transition-property: -webkit-transform, opacity;
-  -webkit-transition-duration: 1000ms;
-}
-
-#photo-container.swipe.slowmode > * {
-  -webkit-transition-duration: 5000ms;
-}
-
-/* initial state */
-#photo-container.swipe.initial .outgoing {
-  -webkit-transform: translateX(0);
-  opacity: 1;
-}
-
-#photo-container.swipe.initial .incoming {
-  -webkit-transform: translateX(100%);
-  opacity: 0;
-}
-
-/* final state */
-#photo-container.swipe.final .outgoing {
-  -webkit-transform: translateX(0);
-  opacity: 1;
-}
-
-#photo-container.swipe.final .incoming {
-  -webkit-transform: translateX(0);
-  opacity: 1;
-}

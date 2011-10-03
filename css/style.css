@@ -164,7 +164,12 @@ body, select, input, textarea {
 /* Headers (h1, h2, etc) have no default font-size or margin; define those yourself */
 h1, h2, h3, h4, h5, h6 { font-weight: bold; }
 
-a, a:active { color: #000; }
+a, a:active 
+{ 
+	color: #000; 
+	text-decoration: none;
+	font-weight: bolder;
+}
 a:visited { color: #607890; }
 a:hover { color: #036; }
 
@@ -188,6 +193,7 @@ em
 	width: 700px;
 	height: 550px;
 	margin: 70px auto;
+	position: relative;
 }
 
 header h1 
@@ -230,10 +236,8 @@ header h1
 .productpagelink
 {
     float: left;    
-    font-family: 'Lucida Grande', Helvetica, sans-serif;
-    font-weight: bolder;
+    font-family: 'Lucida Grande', Helvetica, sans-serif;    
     font-size: 32px;
-    text-decoration: none;
     padding-right: 14px;
     width: 180px;
     text-align: right;
@@ -248,7 +252,15 @@ header h1
     color: #555;
 }
 
+footer 
+{
+	position: relative;
+	color: #777;
+	text-align: center;
+	margin-top: 120px;
+}
 
+footer a, a:active { color: #666; }
 
 /**
  * Non-semantic helper classes: please define your styles before this section.
@@ -299,12 +311,69 @@ header h1
 /* Grade-A Mobile Browsers (Opera Mobile, Mobile Safari, Android Chrome)
    consider this: www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/ */
 @media screen and (max-device-width: 480px) {
-
-
   /* Uncomment if you don't want iOS and WinMobile to mobile-optimize the text for you: j.mp/textsizeadjust */
   /* html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } */
+
+#container
+{
+	position: fixed;
+	background: url(../img/mobile_ghostcrab_bg.png);
+	background-position: top right;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	width: 100%;
+	height: 368px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	/*border: red 1px dotted;*/
 }
 
+#container #logoHeader
+{
+	background: url(../img/mobile_gcw_logo.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	margin-left: 18px;
+	margin-right: auto;
+	margin-top: 0px;
+	position: absolute;
+	top: 20px;
+	width: 287px;
+	height: 19px;
+}
+
+#content
+{
+    top: 80px;
+    margin-left: 20px;
+    margin-right: 16px;
+}
+
+.productpagelink
+{
+    font-size: 24px;
+    padding-right: 14px;
+    width: 100%;
+	text-align: left;
+	float: none;
+	display: block;
+}
+
+.productblurb
+{
+    height: 40px;
+    padding-top: 4px;
+    padding-bottom: 22px;
+	padding-left: 2px;
+    font-size: 16px;
+}
+
+footer 
+{
+	margin-top: 20px;
+}
+
+} /* End mobile styles. */
 
 /**
  * Print styles.
@@ -325,4 +394,3 @@ header h1
   p, h2, h3 { orphans: 3; widows: 3; }
   h2, h3{ page-break-after: avoid; }
 }
-
