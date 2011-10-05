@@ -84,6 +84,16 @@ a:hover { color: #6b6; }
 	margin-left: 32px;	
 }
 
+#betaExhortation .heading
+{
+	margin-bottom: 20px;
+}
+
+#betaExhortation p
+{
+	padding-right: 30px;
+}
+
 #appstorebadge
 {
 	display: block;
