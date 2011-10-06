@@ -81,7 +81,8 @@ a:hover { color: #6b6; }
 
 .bigandsimpletextsection
 {
-	margin-left: 32px;	
+	margin-left: 32px;
+	padding-right: 10px;
 }
 
 #betaExhortation .heading
@@ -261,7 +262,8 @@ footer
 
 	.bigandsimpletextsection
 	{
-		margin-left: 8px;	
+		margin-left: 8px;
+		position: relative;
 	}
 	
 	.triggerRing
@@ -362,7 +364,7 @@ footer
 	#bigandsimplestrip
 	{
 		float: none;
-		width: 320px;
+		width: 260px;
 	}
 	.triggerRing
 	{
