@@ -6,9 +6,9 @@
 
 body 
 { 
-	color: #fff;
-	text-shadow: 1px 0 0 rgba(64, 64, 48, 0.28);
-	background: #eee url(../img/textured_tiles_pattern_darker.png);
+	color: #281b20;
+	text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.25);
+	background: #eee; /* url(../img/textured_tiles_pattern_green.png); */
 	font:17px Helvetica, sans-serif; 
 	*font-size: 17px; 
 } /* Hack retained to preserve specificity */
@@ -32,7 +32,7 @@ a:hover { color: #6b6; }
 	height: 2080px;
 	margin-top: 0px;
 	margin-bottom: 0px;
-	box-shadow: -5px 0px 2px #999, 5px 0px 2px #999;
+	box-shadow: -5px 0px 2px #897, 5px 0px 2px #897;
 }
 
 
