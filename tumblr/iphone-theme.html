@@ -2,36 +2,36 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Jotunheim news blog</title>
+    <title>{Title}</title>
     <meta name="viewport" content="width=640"/>
-    <link rel="shortcut icon" href="http://24.media.tumblr.com/avatar_6029b21a887f_16.png" />
-    <link rel="apple-touch-icon-precomposed" href="http://27.media.tumblr.com/avatar_6029b21a887f_128.png"/>
-    
+    <link rel="shortcut icon" href="{Favicon}" />
+    <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}"/>
+    {block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
     <style type="text/css">
         html {
             width: 640px;
             margin: auto;
             position: relative;
         }
-        
+
         body {
             width: 640px;
             margin: 0 auto;
             padding: 0;
-            background: url('http://static.tumblr.com/c7wvfrp/vKolux6rl/textured_tiles_pattern_green.png') top left repeat #757778;
+            background: url('http://assets.tumblr.com/images/iphone/tumblelog/bg.png') top left repeat #757778;
             font-family: Helvetica, Arial, sans-serif;
         }
-        
+
         .clear {
             clear: both;
         }
-        
+
         iframe#tumblr_controls {
             position: absolute;
             top: 51px !important;
             right: 40px !important;
         }
-        
+
         a {
             text-decoration: none;
             color: inherit;
@@ -74,17 +74,17 @@
                 overflow: hidden;
                 position: relative;
             }
-
+            
                 header .info.showing {
                     height: auto;
                     max-height: 9999px;
                     overflow: visible;
                 }
-                
+            
                 header .info .body span.description_words {
                     margin: 22px 0 0 0;
                 }
-                    
+
                     header .info .body span.description_words:empty {
                         margin: 0px;
                     }
@@ -123,18 +123,18 @@
                         header .info.showing .body .show .gradient {
                             display: none;
                         }
-        
+
         .bubble {
             display: block;
             width: 608px;
             margin: 20px auto 0 auto;
             overflow: hidden;
         }
-        
+            
             .permalink + #posts .bubble {
                 margin-top: 10px;
             }
-            
+
             .bubble .top {
                 background: url('http://assets.tumblr.com/images/iphone/tumblelog_retina/content_top.png') top left repeat-y transparent;
                 width: 608px;
@@ -153,7 +153,7 @@
                 .bubble.description .content {
                     padding: 0 40px 0 40px;
                 }
-                
+
             .bubble .content.bleed {
                 width: 600px;
                 padding: 0 4px;
@@ -190,7 +190,7 @@
                     .bubble .content .copy code {
                         word-wrap: break-word;
                     }
-                    
+
                     .audio_player {
                         margin: 0 0 30px 0;
                     }
@@ -236,7 +236,7 @@
                             float: left;
                             display: block;
                         }
-                    
+
                     .bubble .content .copy.text_post p:first-child {
                         margin-top: 0;
                     }
@@ -260,7 +260,7 @@
                         font-size: 26px;
                         color: #333536;
                     }
-                    
+
                         .bubble .content .video * {
                             width: 520px !important;
                             border: 4px solid #fff;
@@ -321,7 +321,7 @@
                     
                         .bubble .content .link span {
                             font-family: 'Lucida Grande', sans-serif;
-                            vertical-align: -1px
+                            vertical-align: -1px;
                         }
                     
                     .bubble .content .quote {
@@ -352,7 +352,7 @@
                     .bubble .content .audio a {
                         font-weight: bold;
                     }
-                    
+
                     .bubble .content .audio strong u {
                         font-size: 24px;
                     } */
@@ -375,12 +375,12 @@
                         font-size: 26px;
                         color: #333536;
                     }
-                    
+
                         .bubble .content .chat tr:first-child td {
                             border-top-width: 0px;
                             padding-top: 0px;
                         }
-                    
+
                     .bubble .content .chat td.username {
                         padding-right: 24px;
                         font-weight: bold;
@@ -517,7 +517,7 @@
                     height: 59px;
                     background-image: url('http://static.tumblr.com/thpaaos/IyXlb0h5q/permalink_bottom.png');
                 }
-    
+
         .load {
             color: #d8d8d8;
             font-size: 42px;
@@ -547,7 +547,7 @@
                 .links a:first-child {
                     float: left;
                 }
-        
+
         body.android .gray_bubble,
         body.android .audio_player a.play.is_playing,
         body.android .audio_player img.cover
@@ -555,8 +555,7 @@
             -webkit-box-shadow: none !important;
         }
     </style>
-    
-    <script type="text/javascript" charset="utf-8"> 
+    <script type="text/javascript" charset="utf-8">
         setTimeout(function() { window.scrollTo(0,1) }, 100);
                 
         function microAjax(B,A) {
@@ -663,7 +662,7 @@
             $('hide_notes_' + post_id).style.display = 'none';
             $('notes_container_' + post_id).style.display = 'none';
         }
-                
+        
         function play_audio(post_id) {
             var audio = $('audio_file_' + post_id);
             
@@ -677,8 +676,8 @@
         };
         
         var showing_info = 0;        
-                
-        function show_more_info() {        
+
+        function show_more_info() {
             if (showing_info == 0) {
                 $('show_more_info_link').innerHTML = 'X';
                 $('info_container').className = 'info showing';
@@ -691,22 +690,19 @@
         }
         
         function strip_anchors(input) {
-            return input.replace(/<a /g, '<u ').replace(/<\/a>/g, '</u>');
+            return input.replace(/<a /g, '<u ').replace(/<\/a>/g, '<\/u>');
         }
     </script>
-<meta http-equiv="x-dns-prefetch-control" content="off"/></head>
+</head>
 <body>
-
+ 
     <header class="gray_bubble">
-        <a href="/" class="title">Jotunheim news blog&nbsp;</a>
-        
+        <a href="/" class="title">{Title}&nbsp;</a>
         <div class="clear"></div>
-            
-        
+        {block:IndexPage}
             <div class="info" id="info_container">
                 <div class="body" id="body_container">
-                    <span class="description_words"></span>
-                    
+                    {block:Description}<span class="description_words">{PlaintextDescription}</span>{/block:Description}
                     <div class="show" id="show_more_info" style="display:none">
                         <a href="#" id="show_more_info_link" onclick="show_more_info(); return false;">
                             Show all
@@ -715,515 +711,212 @@
                     </div>
                 </div>
             </div>
-        
+        {/block:IndexPage}
     </header>
-    
+
     <div id="posts">
         <!-- START POSTS -->
-        
+        {block:Posts}
             <div class="bubble">
                 <div class="top"></div>
                 <div class="content">
-                    
-                    
-                    
-                        <img src="http://27.media.tumblr.com/tumblr_lt2xyvyqdM1r4nlzao1_400.jpg" alt="Post 4" class="photo" />
-                    
-                        
-                            <div class="copy">
-                                <p>Post 4</p>
-                            </div>
-                        
-                    
-                    
-                    
-                    
-                    
-                    
-                    
 
-                    
-
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <a class="date" href="http://jotunblog.tumblr.com/post/11454745866/post-4" >
-                            1 month ago
-                        </a>
-                    
-                    
-                    <div class="clear"></div>
-                </div>
-                <div class="bottom"></div>
-            </div>
-            
-            
-                <div id="notes_container_11454745866" class="bubble" style="display:none">
-                    <div class="top"></div>
-                    <div class="content bleed" id="notes_11454745866"></div>
-                    <div class="bottom"></div>
-                </div>
-            
-            
-            
-        
-            <div class="bubble">
-                <div class="top"></div>
-                <div class="content">
-                    
-                    
-                    
-                        <img src="http://27.media.tumblr.com/tumblr_lt2xxdTEN71r4nlzao1_400.jpg" alt="Post 3et" class="photo" />
-                    
-                        
-                            <div class="copy">
-                                <p>Post 3et</p>
-                            </div>
-                        
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-
-                    
-
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <a class="date" href="http://jotunblog.tumblr.com/post/11454707748/post-3et" >
-                            1 month ago
-                        </a>
-                    
-                    
-                    <div class="clear"></div>
-                </div>
-                <div class="bottom"></div>
-            </div>
-            
-            
-                <div id="notes_container_11454707748" class="bubble" style="display:none">
-                    <div class="top"></div>
-                    <div class="content bleed" id="notes_11454707748"></div>
-                    <div class="bottom"></div>
-                </div>
-            
-            
-            
-        
-            <div class="bubble">
-                <div class="top"></div>
-                <div class="content">
-                    
-                    
-                    
-                        <a href="http://www.tumblr.com/photo/1280/11454373527/1/tumblr_lt2xk8UTtu1r4nlza"><img src="http://27.media.tumblr.com/tumblr_lt2xk8UTtu1r4nlzao1_500.jpg" alt="" class="photo" /></a>
-                    
-                        
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-
-                    
-
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <a class="date" href="http://jotunblog.tumblr.com/post/11454373527" >
-                            1 month ago
-                        </a>
-                    
-                    
-                    <div class="clear"></div>
-                </div>
-                <div class="bottom"></div>
-            </div>
-            
-            
-                <div id="notes_container_11454373527" class="bubble" style="display:none">
-                    <div class="top"></div>
-                    <div class="content bleed" id="notes_11454373527"></div>
-                    <div class="bottom"></div>
-                </div>
-            
-            
-            
-        
-            <div class="bubble">
-                <div class="top"></div>
-                <div class="content">
-                    
+                    {block:Text}
                         <div class="copy text_post">
-                            
-                            
-                            <p>Post 2.</p>
+                            {block:Title}<h2>{Title}</h2>{/block:Title}
+                            {Body}
+                            {block:More}<p class="read_more_container"><a href="{Permalink}" class="read_more">Read More</a></p>{/block:More}
                         </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
+                    {/block:Text}
 
-                    
-
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <a class="date" href="http://jotunblog.tumblr.com/post/11266230162/post-2" >
-                            1 month ago
-                        </a>
-                    
-                    
-                    <div class="clear"></div>
-                </div>
-                <div class="bottom"></div>
-            </div>
-            
-            
-                <div id="notes_container_11266230162" class="bubble" style="display:none">
-                    <div class="top"></div>
-                    <div class="content bleed" id="notes_11266230162"></div>
-                    <div class="bottom"></div>
-                </div>
-            
-            
-            
-        
-            <div class="bubble">
-                <div class="top"></div>
-                <div class="content">
-                    
-                        <div class="copy text_post">
-                            
-                            
-                            <p>Post!</p>
-                        </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-
-                    
-
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <a class="date" href="http://jotunblog.tumblr.com/post/11266221180/post" >
-                            1 month ago
-                        </a>
-                    
-                    
-                    <div class="clear"></div>
-                </div>
-                <div class="bottom"></div>
-            </div>
-            
-            
-                <div id="notes_container_11266221180" class="bubble" style="display:none">
-                    <div class="top"></div>
-                    <div class="content bleed" id="notes_11266221180"></div>
-                    <div class="bottom"></div>
-                </div>
-            
-            
-            
-        
-            <div class="bubble">
-                <div class="top"></div>
-                <div class="content">
-                    
-                        <div class="copy text_post">
-                            
-                            
-                            <p>Buh.</p>
-                        </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-
-                    
-
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <a class="date" href="http://jotunblog.tumblr.com/post/11266057128/buh" >
-                            1 month ago
-                        </a>
-                    
-                    
-                    <div class="clear"></div>
-                </div>
-                <div class="bottom"></div>
-            </div>
-            
-            
-                <div id="notes_container_11266057128" class="bubble" style="display:none">
-                    <div class="top"></div>
-                    <div class="content bleed" id="notes_11266057128"></div>
-                    <div class="bottom"></div>
-                </div>
-            
-            
-            
-        
-            <div class="bubble">
-                <div class="top"></div>
-                <div class="content">
-                    
-                    
-                    
-                        <a href="http://www.tumblr.com/photo/1280/11246408082/1/tumblr_lstl37zdHa1r4nlza"><img src="http://28.media.tumblr.com/tumblr_lstl37zdHa1r4nlzao1_500.jpg" alt="Technically, I think this should be &amp;#8220;AP&amp;#8217;TM&amp;#8217;S.&amp;#8221;" class="photo" /></a>
-                    
-                        
+                    {block:Photo}
+                        {block:HighRes}<a href="{PhotoURL-HighRes}">{/block:HighRes}<img src="{PhotoURL-500}" alt="{PhotoAlt}" class="photo" />{block:HighRes}</a>{/block:HighRes}
+                        {block:Caption}
                             <div class="copy">
-                                <p>Technically, I think this should be &#8220;AP&#8217;TM&#8217;S.&#8221;</p>
+                                {Caption}
                             </div>
-                        
-                    
-                    
-                    
-                    
-                    
-                    
-                    
+                        {/block:Caption}
+                    {/block:Photo}
 
-                    
-
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <a class="date" href="http://jotunblog.tumblr.com/post/11246408082/technically-i-think-this-should-be-aptms" >
-                            1 month ago
-                        </a>
-                    
-                    
-                    <div class="clear"></div>
-                </div>
-                <div class="bottom"></div>
-            </div>
-            
-            
-                <div id="notes_container_11246408082" class="bubble" style="display:none">
-                    <div class="top"></div>
-                    <div class="content bleed" id="notes_11246408082"></div>
-                    <div class="bottom"></div>
-                </div>
-            
-            
-            
-        
-            <div class="bubble">
-                <div class="top"></div>
-                <div class="content">
-                    
-                    
-                    
-                        <a href="http://www.tumblr.com/photo/1280/11246131356/1/tumblr_lstkshTE541r4nlza"><img src="http://27.media.tumblr.com/tumblr_lstkshTE541r4nlzao1_500.jpg" alt="Free snax day? Nice work, lockpicker. Or snack loading guy." class="photo" /></a>
-                    
-                        
-                            <div class="copy">
-                                <p>Free snax day? Nice work, lockpicker. Or snack loading guy.</p>
-                            </div>
-                        
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-
-                    
-
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <a class="date" href="http://jotunblog.tumblr.com/post/11246131356/free-snax-day-nice-work-lockpicker-or-snack" >
-                            1 month ago
-                        </a>
-                    
-                    
-                    <div class="clear"></div>
-                </div>
-                <div class="bottom"></div>
-            </div>
-            
-            
-                <div id="notes_container_11246131356" class="bubble" style="display:none">
-                    <div class="top"></div>
-                    <div class="content bleed" id="notes_11246131356"></div>
-                    <div class="bottom"></div>
-                </div>
-            
-            
-            
-        
-            <div class="bubble">
-                <div class="top"></div>
-                <div class="content">
-                    
-                    
-                    
-                        <a href="http://www.tumblr.com/photo/1280/11161981114/1/tumblr_lsq3erM61x1r4nlza"><img src="http://26.media.tumblr.com/tumblr_lsq3erM61x1r4nlzao1_500.jpg" alt="Hey, look, an energon cube! Or &amp;#8220;cube&amp;#8221; I should say. Test!" class="photo" /></a>
-                    
-                        
-                            <div class="copy">
-                                <p>Hey, look, an energon cube! Or &#8220;cube&#8221; I should say. Test!</p>
-                            </div>
-                        
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-
-                    
-
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <a class="date" href="http://jotunblog.tumblr.com/post/11161981114/hey-look-an-energon-cube-or-cube-i-should" >
-                            1 month ago
-                        </a>
-                    
-                    
-                    <div class="clear"></div>
-                </div>
-                <div class="bottom"></div>
-            </div>
-            
-            
-                <div id="notes_container_11161981114" class="bubble" style="display:none">
-                    <div class="top"></div>
-                    <div class="content bleed" id="notes_11161981114"></div>
-                    <div class="bottom"></div>
-                </div>
-            
-            
-            
-        
-            <div class="bubble">
-                <div class="top"></div>
-                <div class="content">
-                    
-                        <div class="copy text_post">
-                            
-                            
-                            <p>&#8220;Not just to N. Indiana, to Gary. Not just to Gary, but the Majestic Star&#8230;you walk onto this boat that looks like it was bought on eBay.&#8221;</p>
+                    {block:Photoset}
+                        <div class="video">
+                            {Photoset-500}
                         </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
+                        {block:Caption}
+                            <div class="copy">
+                                {Caption}
+                            </div>
+                        {/block:Caption}
+                    {/block:Photoset}
 
-                    
+                    {block:Link}
+                        <a href="{URL}" class="link" {Target}>{Name} <span>&rarr;</span></a>
+                        {block:Description}
+                            <div class="copy">
+                                {Description}
+                            </div>
+                        {/block:Description}
+                    {/block:Link}
 
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <a class="date" href="http://jotunblog.tumblr.com/post/11161956631/not-just-to-n-indiana-to-gary-not-just-to" >
-                            1 month ago
+                    {block:Quote}
+                        <div class="quote">&#8220;{Quote}&#8221;</div>
+                        {block:Source}
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin:20px 0">
+                                <tr>
+                                    <td valign="top" style="width:2px; padding:0 20px 0 0">
+                                        &mdash;
+                                    </td>
+                                    <td valign="top" class="copy quote_source">
+                                        {Source}
+                                    </td>
+                                </tr>
+                            </table>
+                        {/block:Source}
+                    {/block:Quote}
+
+                    {block:Audio}
+                        <div class="audio_player {block:AlbumArt}with_cover_art{/block:AlbumArt}" id="play_audio_{PostID}"> 
+                            {block:AlbumArt}<img src="{AlbumArtURL}" class="cover"/>{/block:AlbumArt}
+                            <a class="play" onclick="play_audio({PostID}); return false;" id="play_button_{PostID}">
+                                {block:TrackName}<strong>{TrackName}</strong><br/>{/block:TrackName}
+                                {block:Artist}{Artist}{/block:Artist}
+                                <strong class="listen" style="display:none">Listen</strong>
+                            </a>
+                            <audio id="audio_file_{PostID}" src="{RawAudioURL}"></audio>
+                            <div class="clear"></div>
+                        </div>
+                        {block:Caption}
+                            <div class="copy">
+                                {Caption}
+                            </div>
+                        {/block:Caption}
+                    {/block:Audio}
+
+                    {block:Video}
+                        <div class="video"> 
+                            {Video-500}
+                        </div>
+                        {block:Caption}
+                            <div class="copy">
+                                {Caption}
+                            </div>
+                        {/block:Caption}
+                    {/block:Video}
+
+                    {block:Chat}
+                        {block:Title}<h2 style="margin-bottom:26px;">{Title}</h2>{/block:Title}
+                        <table class="chat" border="0" cellpadding="0" cellspacing="0">
+                            {block:Lines}
+                                <tr>
+                                    {block:Label}<td class="username">{Label}</td>{/block:Label}
+                                    <td width="*">{Line}</td>
+                                </tr>
+                            {/block:Lines}
+                        </table>
+                    {/block:Chat}
+
+                    {block:Answer}
+                        <div class="answer_question">{Question}</div>
+                        <div class="answer_asker">
+                            <img src="{AskerPortraitURL-48}" width="48" height="48" />{Asker}
+                        </div>
+                        <div class="copy">
+                            {Answer}
+                        </div>
+                    {/block:Answer}
+
+                    {block:Date}
+                        <a class="date" href="{Permalink}" {Target}>
+                            {TimeAgo}
                         </a>
-                    
-                    
+                    {/block:Date}
+                    {block:NoteCount}
+                        <a href="{Permalink}" class="note_count" onclick="show_notes({PostID}, '{PostNotesURL}'); return false;" id="show_notes_{PostID}" {Target} style="padding-left:6px;">
+                            {NoteCountWithLabel}
+                        </a>
+                        <a href="#" class="note_count" onclick="hide_notes({PostID}); return false;" id="hide_notes_{PostID}" style="display: none; padding-left:6px;">
+                             Hide notes
+                        </a>
+                    {/block:NoteCount}
+<!--IF DISQUS---
+                    {block:Date}<a href="{Permalink}#disqus_thread" class="note_count" style="padding-left:6px;">Comments</a>{/block:Date}
+----ENDIF DISQUS-->
                     <div class="clear"></div>
                 </div>
                 <div class="bottom"></div>
             </div>
-            
-            
-                <div id="notes_container_11161956631" class="bubble" style="display:none">
+            {block:IndexPage}
+                <div id="notes_container_{PostID}" class="bubble" style="display:none">
                     <div class="top"></div>
-                    <div class="content bleed" id="notes_11161956631"></div>
+                    <div class="content bleed" id="notes_{PostID}"></div>
                     <div class="bottom"></div>
                 </div>
-            
-            
-            
-        
+            {/block:IndexPage}
+            {block:PermalinkPage}
+<!--IF DISQUS---
+    {block:Date}
+        <div class="bubble">
+            <div class="top"></div>
+            <style type="text/css">
+                #disqus_thread {
+                    background: url('http://assets.tumblr.com/images/iphone/tumblelog_retina/content_bg.png') -1px 0 repeat-y transparent;
+                    width: 586px;
+                    margin: 0;
+                    padding: 0 11px;
+                }
+                #disqus_thread a {
+                    text-decoration: underline;
+                }
+                #dsq-new-post h3 {
+                    margin-top: 0;
+                }
+                #dsq-content .dsq-item-trackback {
+                    margin-bottom: 0;
+                }
+                #dsq-global-toolbar {
+                    margin-top: 0 !important;
+                }
+            </style>
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = 'http://DISQUS_SHORTNAME.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+            </script>
+            <div class="content">
+                <div class="copy">
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="bottom"></div>
+        </div>
+    {/block:Date}
+----ENDIF DISQUS-->
+                {block:PostNotes}
+                    <div class="bubble">
+                        <div class="top"></div>
+                        <div class="content bleed">
+                            {PostNotes}
+                        </div>
+                        <div class="bottom"></div>
+                    </div>
+                {/block:PostNotes}
+                <div style="margin-bottom:30px;"></div>
+            {/block:PermalinkPage}
+        {/block:Posts}
         <!-- END POSTS -->
     </div>
-    
-    
-        
+    {block:IndexPage}
+        {block:NextPage}
             <a href="/page/2" class="load gray_bubble" id="load_more" onclick="load_more_posts(); return false;">
                 Load more posts
             </a>
-
             <div class="load gray_bubble" id="loading_more" onclick="load_more_posts(); return false;" style="display:none">
-                <img src="http://static.tumblr.com/thpaaos/HBrlbfdoy/loading.gif" width="32" height="32" />Loading more posts...
+                <img src="http://static.tumblr.com/thpaaos/HBrlbfdoy/loading.gif" width="32" height="32" /> Loading more posts...
             </div>
-        
-    
-    
+        {/block:NextPage}
+    {/block:IndexPage}
     <div class="links">
         <a href="http://www.tumblr.com">Powered by Tumblr</a>
         <a href="/disable_mobile_interface" onclick="if(confirm('Switch from mobile to standard view?')){} else {return false;}">Standard view</a>
@@ -1235,10 +928,20 @@
         if (parseInt(info_style.height) > 70) {
             $('show_more_info').style.display = 'block'
         }
-        
+
         if (navigator.userAgent.match(/Android/i)) {
             document.body.className = 'android';
         }
     </script>
-<!-- BEGIN TUMBLR CODE --><iframe src="http://assets.tumblr.com/iframe.html?10&src=http%3A%2F%2Fjotunblog.tumblr.com%2F&amp;iphone&amp;brag=0" scrolling="no" width="200" height="54" frameborder="0" style="position:absolute; z-index:1337; top:0px; right:0px; border:0px; background-color:transparent; overflow:hidden;" id="tumblr_controls"></iframe><!--[if IE]><script type="text/javascript">document.getElementById('tumblr_controls').allowTransparency=true;</script><![endif]--><script type="text/javascript">_qoptions={qacct:"p-19UtqE8ngoZbM"};</script><script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script><noscript><img src="http://pixel.quantserve.com/pixel/p-19UtqE8ngoZbM.gif" style="display:none; border-width:0px; height:1px; width:1px;" alt=""/></noscript><!-- END TUMBLR CODE --></body>
+<!--IF DISQUS---
+<script type="text/javascript">
+var disqus_shortname = 'DISQUS_SHORTNAME';
+(function () {
+  var s = document.createElement('script'); s.async = true;
+  s.src = 'http://disqus.com/forums/' + disqus_shortname + '/count.js';
+  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+----ENDIF DISQUS-->
+</body>
 </html>
