@@ -93,6 +93,12 @@ a:hover { color: #6b6; }
 	padding-right: 10px;
 }
 
+.leftcolumnsection
+{
+	margin-left: 16px;
+	padding-right: 10px;	
+}
+
 #betaExhortation .heading
 {
 	margin-bottom: 20px;
