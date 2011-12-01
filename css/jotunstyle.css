@@ -63,7 +63,7 @@ a:hover { color: #6b6; }
 
 #writeupstrip section
 {
-	margin-bottom: 2em;
+	margin-bottom: 1em;
 }
 
 
@@ -99,8 +99,9 @@ a:hover { color: #6b6; }
 #appstorebadge
 {
 	display: block;
-	margin-top: 64px;
-	margin-left: 64px;	
+	margin-top: 8px;
+	margin-left: 64px;
+	margin-bottom: 20px;
 }
 
 #framedscreenshot
@@ -110,6 +111,11 @@ a:hover { color: #6b6; }
 	background-position: center;
 	width: 380px;
 	height: 757px;	
+}
+
+#videosection
+{
+	margin-left: 12px;
 }
 
 .overlayTrigger
@@ -346,6 +352,10 @@ footer
 		display: block;
 		margin-left: 18px;
 	}
+	#appstorebadge
+	{
+		margin-left: 16px;
+	}	
 }
 
 @media only screen and (max-width: 321px) 
@@ -377,5 +387,5 @@ footer
 	{
 		display: block;
 		margin-left: 6px;
-	}	
+	}
 }
