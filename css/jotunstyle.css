@@ -55,10 +55,17 @@ a:hover { color: #6b6; }
 	padding-left: 414px;
 }
 
+#writeupstrip ol
+{
+	list-style-type: square;	
+	padding-left: 414px;
+}
+
 #writeupstrip li
 {
 	margin-left: 20px;
 	padding-bottom: 0.3em;
+	type
 }
 
 #writeupstrip section
@@ -101,7 +108,7 @@ a:hover { color: #6b6; }
 	display: block;
 	margin-top: 8px;
 	margin-left: 64px;
-	margin-bottom: 20px;
+	margin-bottom: 28px;
 }
 
 #framedscreenshot
