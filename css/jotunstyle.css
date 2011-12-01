@@ -283,7 +283,7 @@ footer
 	{
 		padding-right: 0px;
 		width: 80%;
-		margin: 0 auto auto;
+		margin: 1.5em auto auto;
 	}	
 	
 	#writeupstrip ul
@@ -351,7 +351,6 @@ footer
 	{
 		display: block;
 		margin-left: 18px;
-		margin-bottom: 1em;
 	}
 	#appstorebadge
 	{
