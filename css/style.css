@@ -208,7 +208,8 @@ em
 {
 	width: 550px;
 	height: 800px;
-	margin: 32px auto;
+	margin-top: 20px;
+	left: 80px;
 	position: absolute;
 	z-index: 2;
 }
