@@ -411,12 +411,11 @@ footer a, a:active { color: #666; }
 #container
 {
 	position: fixed;
-	background: url(../img/mobile_ghostcrab_bg.png);
-	background-position: top right;
+	background: none;
+	background-position: bottom;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	width: 100%;
-	height: 368px;
 	margin-top: 0px;
 	margin-bottom: 0px;
 	/*border: red 1px dotted;*/
@@ -434,11 +433,12 @@ footer a, a:active { color: #666; }
 	top: 20px;
 	width: 287px;
 	height: 19px;
+
 }
 
 #content
 {
-    top: 80px;
+    top: 40px;
     margin-left: 20px;
     margin-right: 16px;
 }
@@ -462,10 +462,15 @@ footer a, a:active { color: #666; }
 
 footer 
 {
-	margin-top: 20px;
+	margin-top: 8px;
+	background: url(../img/ghostcrab_small.png);
+	background-position: top center;
+	background-repeat: no-repeat;
+	height: 300px;
 }
 
-} /* End mobile styles. */
+
+/* End mobile styles. */
 
 /**
  * Print styles.
