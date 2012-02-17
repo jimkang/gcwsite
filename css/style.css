@@ -305,6 +305,8 @@ header h1
 
 .productblurb
 {
+    position: relative;
+    top: 10px;
     height: 40px;
     padding-top: 22px;
     padding-bottom: 22px;
@@ -316,10 +318,11 @@ header h1
     float: left;    
     font-family: 'Lucida Grande', Helvetica, sans-serif;    
     font-size: 32px;
+    font-weight: normal;
     padding-right: 30px;
     width: 180px;
     text-align: right;
-	color: #555;
+    color: #555;
 }
 
 .productpagelink:hover
@@ -442,11 +445,19 @@ footer a, a:active { color: #666; }
 
 .productblurb
 {
-    height: 40px;
-    padding-top: 4px;
+    position: relative;
+    height: 32px;
+    padding-top: 32px;
     padding-bottom: 22px;
-	padding-left: 2px;
     font-size: 16px;
+}
+
+.productpagelink
+{
+    width: 100px;
+    padding-top: 16px;
+    padding-right: 32px;
+    font-size: 22px;
 }
 
 footer 
