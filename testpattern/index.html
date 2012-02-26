@@ -1,0 +1,194 @@
+<html>
+<head>
+	<title>Test Pattern</title>
+	<link href="style.css" rel="stylesheet" rev="stylesheet" type="text/css" media="screen" charset="utf-8" />
+<head>
+<body>	
+	
+<div class="page">
+	
+
+<div class="black_overlay">
+	<center><img src="bin/testpattern_wall.png" /></center>
+</div>
+
+<div class="horizontal-drape top-drape">&nbsp;</div>
+
+<div class="horizontal-drape bottom-drape">&nbsp;</div>
+	
+<div class="content">	
+	<table border="0" width="100%" height="480px">	
+		<tr>			
+			<td width="280">
+				<p>		
+					<h2>
+						Test Pattern is an iPhone app that helps you discover colors.
+					</h2>	
+				</p>
+				<br /><br /><br />
+				<p>
+					It's free and in the <a href="http://itunes.apple.com/app/id396380294">App Store</a>. Have at it!
+				</p>
+				<br /><br />
+			</td>
+			
+			<td width="80px"><!--Spacer-->&nbsp;</td>
+			
+			<td width="320" align="center">
+				<img src="bin/preview_view2.png" id="switchable_image">
+			</td>
+
+			<td width="80px"><!--Spacer-->&nbsp;</td>
+
+			<td class="textcell" width="280">
+				<p>
+					<ul type="square">
+						<li>
+							Follow <a href="http://twitter.com/testpatternapp">@testpatternapp</a> to get announcements and 
+							check out nifty patterns. Send any comments and questions that way, too!</li>
+						<li>
+							Check out a <a href="http://vimeo.com/15188796">demo</a>.</li>
+						<li>If you find patterns or colors you want to share with others, send them to <a href="mailto:testpatternapp@gmail.com">testpatternapp@gmail.com</a>.
+						</li>
+						<li>
+							I'll post them to @testpatternapp, then we'll celebrate them! It'll be like a contest, except without any losing. Whew!
+						</li>
+					</ul>
+				</p>				
+				<br /><br />
+
+				<span style="float: right;" ><a href="http://phalangesoftware.com">Phalange Software</a></span>
+			</td>				
+		</tr>
+	</table>
+</div>
+
+</div class="page">
+
+<script type="text/javascript" src="../js/libs/jquery-1.5.1.min.js"></script>
+<script type="text/javascript">
+
+function setLeftColor(color)
+{	
+//	$('.left-drape').css('background-color', color);
+	$('.top-drape').css('background-color', color);
+	$('.content h2').css('color', color);
+	$('.demo-wrapper').css('border-color', color);
+}
+
+function setRightColor(color)
+{
+//	$('.right-drape').css('background-color', color);
+	$('.bottom-drape').css('background-color', color);
+	$('.content a').css('color', color);
+}
+
+/*var colorPairArray = 
+[
+	['#D6A345', '#D54C19',
+	'#7E3513', '#F93414',
+	'#FBF054', '#44A3F0',
+	'#97E598', '#D7990F',
+	'#EFA915', '#464F2A',
+	'#12B11C', '#1A6622'];
+];
+*/
+var colorArray = 
+[
+	'#D6A345', '#D54C19',
+	//'#7E3513', 
+	'#F93414',
+	'#FBF054', '#44A3F0',
+	//'#97E598', 
+	'#D7990F',
+	'#EFA915', //'#464F2A',
+	'#12B11C', 
+	//'#1A6622'
+];
+
+
+function shuffleLeft()
+{
+	setLeftColor(colorArray[Math.floor(Math.random() * colorArray.length)]);	
+}
+
+function shuffleRight()
+{
+	setRightColor(colorArray[Math.floor(Math.random() * colorArray.length)]);	
+}
+
+function shuffleColors()
+{
+	/*
+	var randomColorPair = 
+	colorPairArray[Math.floor(Math.random() * colorPairArray.length)];
+	setLeftColor(randomColorPair[0]);
+	setRightColor(randomColorPair[1]);
+	*/
+	shuffleLeft();
+	shuffleRight();	
+}
+
+var g_screenshots = 
+[
+	'bin/preview_view2.png',
+	'bin/colors_view3.png',
+	'bin/palette_view.png',
+	'bin/colors_view1.png',
+	'bin/preview_view.png',
+	'bin/preview_view3.png',
+	'bin/mailshot1.png', 
+	'bin/preview_view3.png',
+	'bin/preview_view5.png',
+	'bin/preview_view4.png'
+];
+
+var g_screenshotIndex = Math.floor(Math.random() * g_screenshots.length);
+if (g_screenshotIndex == 5) 
+{
+	// The mail shot is not a good initial screenshot to show.
+	g_screenshotIndex = 0;
+}
+
+function flipScreenshot()
+{
+	g_screenshotIndex = g_screenshotIndex + 1;
+	if (g_screenshotIndex >= g_screenshots.length)
+	{
+		g_screenshotIndex = 0;
+	}
+	$('#switchable_image').attr('src', g_screenshots[g_screenshotIndex]);
+}
+
+$(function()
+{
+	$('.screenshot-wrapper').bind('click', shuffleColors);
+//	$('.left-drape').bind('click', shuffleLeft);
+//	$('.right-drape').bind('click', shuffleRight);
+	$('.top-drape').bind('click', shuffleLeft);
+	$('.bottom-drape').bind('click', shuffleRight);
+	$('.black_overlay').bind('click', function() 
+	{ 
+		shuffleLeft();
+		shuffleRight();
+		$('.black_overlay').hide(); 
+	});
+	$('#switchable_image').bind('click', flipScreenshot);
+	flipScreenshot();
+});
+
+// Analytics stuff.
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6768726-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+
+</body>
+</html>	

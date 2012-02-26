@@ -1,0 +1,144 @@
+<html>
+<head>
+	<title>Test Pattern, an iPhone app that helps you find and visualize compelling color pairs.</title>
+	<link href="style2.css" rel="stylesheet" rev="stylesheet" type="text/css" media="screen" charset="utf-8" />
+<head>
+<body>	
+	
+<div class="page">
+	
+<div class="content">
+	
+<h2>Test Pattern is an iPhone app that helps you discover and visualize compelling color pairs.</h2>
+
+</div>
+
+<div class="content">
+<!--	
+<img class="leftshot" src="bin/swatchshot1.png" />	
+<img class="centershot" src="bin/swatchshot2.png" />	
+<img class="centershot" src="bin/swatchshot3.png" />	
+-->
+<center><img class="centershot" src="bin/swatchshot1.png" /></center>
+<br /><br />
+</div>
+
+<div class="content">
+
+<center>Test Pattern lets you find two colors, randomly or deliberately, and see how they work together.</center>
+
+<br /><br />
+
+</div>
+
+<center><img class="centershot" src="bin/editorshot1.png" /></center>
+
+<div class="content">
+
+<center>
+It's for:
+	
+<ul type="square">
+<li>Knitters</li>
+<li>Jewelers</li>
+<li>Anyone that just likes to look at colors</li>
+</ul>
+</center>
+
+<br /><br />
+
+</div>	
+
+
+<div class="content">
+
+<center>
+<img class="centershot" src="bin/mailshot1.png" style="border-color: #000" />	
+</center>
+
+<br /><br />
+<br /><br />
+
+</div>
+
+
+
+<div class="content">
+<a href="http://phalangesoftware.com">Phalange Software</a>
+<br /><br />
+<br /><br />
+<br /><br />
+<br /><br />
+
+</div>
+
+</div class="page">
+
+<script type="text/javascript" src="../jquery-1.3.2.min.js"></script>
+<script type="text/javascript">
+
+$(function()
+{
+	$("#landscapescreenshot").bind("click", function(e)
+	{
+		// Load next image.
+		$(e.target).attr('src', getNextLandscapeScreenShotSrc());
+	});
+	$("#portraitscreenshot").bind("click", function(e)
+	{
+		// Load next image.
+		$(e.target).attr('src', getNextPortraitScreenShotSrc());
+	});
+});
+
+var g_currentLandscapeImageNumber = 2;
+var g_currentPortraitImageNumber = 1;
+
+function incrementCyclingCounter(counter, upperlimit, lowerlimit)
+{
+	if (counter >= upperlimit)
+	{
+		return lowerlimit;
+	}
+	else
+	{
+		return counter + 1;
+	}
+}
+
+function getNextScreenshotImgSrc(orientationString, number)
+{
+	return "bin/" + orientationString + "screenshot" + number + "frame.png";
+}
+
+function getNextLandscapeScreenShotSrc()
+{
+	g_currentLandscapeImageNumber = incrementCyclingCounter(g_currentLandscapeImageNumber, 3, 1);
+	return getNextScreenshotImgSrc("landscape", g_currentLandscapeImageNumber);
+}
+
+function getNextPortraitScreenShotSrc()
+{
+	g_currentPortraitImageNumber = incrementCyclingCounter(g_currentPortraitImageNumber, 3, 1);
+	return getNextScreenshotImgSrc("portrait", g_currentPortraitImageNumber);
+}
+
+// Analytics stuff.
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6768726-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+<!-- Woopra Code Start -->
+<script type="text/javascript">
+var _wh = ((document.location.protocol=='https:') ? "https://sec1.woopra.com" : "http://static.woopra.com");
+document.write(unescape("%3Cscript src='" + _wh + "/js/woopra.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<!-- Woopra Code End -->
+
+</body>
+</html>	
