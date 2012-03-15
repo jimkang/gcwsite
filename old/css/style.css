@@ -64,7 +64,7 @@ input, select { vertical-align: middle; }
  */
 
 body { 
-	background: #eee url(../img/textured_tiles_pattern_big.png);
+	background: #eee url(../../img/textured_tiles_pattern_big.png);
 	font:13px/1.231 sans-serif; 
 	*font-size:small; 
 	} /* Hack retained to preserve specificity */
@@ -222,7 +222,7 @@ em
 #plaincontainerbgimage
 {
 	opacity: 0.4;
-	background: url(../img/ghostcrab_small.png);
+	background: url(../../img/ghostcrab_small.png);
 	background-repeat: no-repeat;
 	background-position: top center;
 	width: 100%;
@@ -423,7 +423,7 @@ footer a, a:active { color: #666; }
 
 #container #logoHeader
 {
-	background: url(../img/mobile_gcw_logo.png);
+	background: url(../../img/mobile_gcw_logo.png);
 	background-position: center;
 	background-repeat: no-repeat;
 	margin-left: 18px;
@@ -463,7 +463,7 @@ footer a, a:active { color: #666; }
 footer 
 {
 	margin-top: 8px;
-	background: url(../img/ghostcrab_small.png);
+	background: url(../../img/ghostcrab_small.png);
 	background-position: top center;
 	background-repeat: no-repeat;
 	height: 300px;

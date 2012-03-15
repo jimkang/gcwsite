@@ -8,7 +8,7 @@ body
 { 
 	color: #483b40;
 	text-shadow: 0 2px 0 rgba(255, 255, 255, 0.7);
-	background: url(../img/textured_tiles_pattern_green.png); /* url(../img/textured_tiles_pattern_green.png); */
+	background: url(../../img/textured_tiles_pattern_green.png); /* url(../img/textured_tiles_pattern_green.png); */
 	font:17px Helvetica, sans-serif; 
 	*font-size: 17px; 
 } /* Hack retained to preserve specificity */
@@ -28,7 +28,7 @@ a:hover { color: #6b6; }
 #container
 {
 	/* bgnoise is from http://subtlepatterns.com/ */
-	background: #eee url(../img/bgnoise.gif);	
+	background: #eee url(../../img/bgnoise.gif);	
 	width: 900px;
 	height: 2080px;
 	margin-top: 0px;
@@ -119,7 +119,7 @@ a:hover { color: #6b6; }
 
 #framedscreenshot
 {
-	background: url(../jotunheim/img/jotunheim_screenshot_in_frame.png);	
+	background: url(../../jotunheim/img/jotunheim_screenshot_in_frame.png);	
 	background-repeat: no-repeat;
 	background-position: center;
 	width: 380px;
