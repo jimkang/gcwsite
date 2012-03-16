@@ -1,6 +1,8 @@
 body 
 { 
 	background: #eee url(../../img/textured_tiles_pattern_big.png);
+	text-shadow: white 0px 1px 0px;
+	color: #333;
 }
 
 .titleheader 
@@ -40,3 +42,42 @@ a, a:active
     padding-bottom: 22px;
     font-size: 20px;
 }
+
+.indented
+{
+	padding-left: 1.5em;
+}
+
+.topbuffer
+{
+	padding-top: 2em;
+}
+
+
+/* All mobile. */
+ @media only screen and (max-width: 767px) 
+ {
+	 .topbuffer
+	 {	 
+		 padding-top: 0px;
+	 }
+	 
+	 .column p
+	 {
+		 margin-left: 1em;
+		 margin-right: 1em;
+	 }
+	 
+	 .aboutheading
+	 {
+		 margin-left: 0.7em;
+		 margin-right: 0.7em;		 
+	 }
+	 
+	 .indented
+	 {
+		 padding-left: 2.5em;
+	 }
+ }
+ 
+ 
