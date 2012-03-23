@@ -7,7 +7,7 @@ if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)
 	gPhotos = 
 	[
 		{filename: "jotsview_screenshot_small.png", width: 200, height: 300},
-		{filename: "editorviewlandscape_screenshot_small.png", width: 300, height: 200},
+		// {filename: "editorviewlandscape_screenshot_small.png", width: 300, height: 200},
 		{filename: "outletselection_screenshot_small.png", width: 200, height: 300},
 		{filename: "imageeditor_screenshot_small.png", width: 200, height: 300},
 		{filename: "jotsviewhelp_screenshot_small.png", width: 200, height: 300},
@@ -20,7 +20,7 @@ else
 	gPhotos = 
 	[
 		{filename: "jotsview_screenshot.png", width: 320, height: 480},
-		{filename: "editorviewlandscape_screenshot.png", width: 480, height: 320},
+		// {filename: "editorviewlandscape_screenshot.png", width: 480, height: 320},
 		{filename: "outletselection_screenshot.png", width: 320, height: 480},
 		{filename: "imageeditor_screenshot.png", width: 320, height: 480},
 		{filename: "jotsviewhelp_screenshot.png", width: 320, height: 480},
@@ -30,7 +30,7 @@ else
 }
 
 var gPhotoIndex = 0;
-var photoCount = 7;
+var photoCount = 6; //7;
 var gRingIntervalId = null;
 
 function incrementPhotoIndex()
@@ -51,70 +51,17 @@ function decrementPhotoIndex()
 	}	
 }
 
-function animateRing(ring)
-{
-	gRingIntervalId = window.setInterval(function() 
-	{
-		// Now it's done animating, so reset. 			 
-		ring.removeClassName("expandedTriggerRing");
-		
-		if (navigator.appName.indexOf("Netscape" != -1))
-		{
-			// Destroy and recreate the node.
-			var parent = ring.parentNode;
-			var newRing = document.createElement('img');
-			newRing.src = ring.src;
-			
-			parent.removeChild(ring);
-			parent.appendChild(newRing)				
-			newRing.addClassName("triggerRing");
-			ring = newRing;
-		}
-		// And start the animation again.
-	  	// The "setTimeout" ensures that the initial style is rendered, and hence allows the transition to run.
-		window.setTimeout(function() 
-		{
-			ring.addClassName("expandedTriggerRing");
-		}, 0);						
-	}, 1600);
-	
-	// Kick off animation.
-	ring.addClassName("expandedTriggerRing");
-}
-
-function setUpRingAnimation()
-{
-  	var rings = document.querySelectorAll('.triggerRing');
-	// 	  	for (var i = 0; i < rings.length; ++i) 
-	// {
-	// 	    	animateRing(rings[i]);		
-	// }		
-	// Right now, we're only handling one.
-	animateRing(rings[0]);
-}
-
-function takeDownRingAnimationForever()
-{
-	// Clear the resetter.
-	window.clearInterval(gRingIntervalId);
-	gRingIntervalId = null;
-	// Hide the ring.
-  	var rings = document.querySelectorAll('.triggerRing');
-	// Right now, we're only handling one.
-	rings[0].style.opacity = 0;
-}
-
 function setUpArrowHandlers()
 {
-	var leftArrow = document.getElementById('leftArrow');
-	var rightArrow = document.getElementById('rightArrow');
+	// var leftArrow = document.getElementById('leftArrow');
+	// var rightArrow = document.getElementById('nav_arrow');
 
-	$(leftArrow).unbind('click');	
-	$(rightArrow).unbind('click');	
+	// // $(leftArrow).unbind('click');	
+	// $(rightArrow).unbind('click');	
 
-	$(leftArrow).bind('click', prevPhotoTriggerClicked);	
-	$(rightArrow).bind('click', nextPhotoTriggerClicked);	
-	console.log("Set up arrow handlers.");
+	// // $(leftArrow).bind('click', prevPhotoTriggerClicked);	
+	// $(rightArrow).bind('click', nextPhotoTriggerClicked);	
+	// console.log("Set up arrow handlers.");
 }
 
 function showOverlay()
@@ -202,38 +149,38 @@ function createElementForAssetAtIndex(assetIndex)
 
 function setUp()
 {
-  	var triggerElements = document.querySelectorAll('.overlayTrigger');
-  	for (var i = 0; i < triggerElements.length; ++i) 
-	{
-    	var curElement = triggerElements[i];
-    	// ".bind()" calls Function.prototype.bind (in utilities.js); it's a convenient way to
-    // hook up an event listener with 'this' as the target, inside a loop.
-    	curElement.addEventListener('click', triggerClicked.bind(this, curElement), false);
-	}
+ //  	var triggerElements = document.querySelectorAll('.overlayTrigger');
+ //  	for (var i = 0; i < triggerElements.length; ++i) 
+	// {
+ //    	var curElement = triggerElements[i];
+ //    	// ".bind()" calls Function.prototype.bind (in utilities.js); it's a convenient way to
+ //    // hook up an event listener with 'this' as the target, inside a loop.
+ //    	curElement.addEventListener('click', triggerClicked.bind(this, curElement), false);
+	// }
 	
-	var overlay = document.getElementById('overlay');
-	overlay.addEventListener('click', hideOverlay.bind(this, overlay), false);
+	// var overlay = document.getElementById('overlay');
+	// overlay.addEventListener('click', hideOverlay.bind(this, overlay), false);
 	
-	// Get ring animation going.
-	setUpRingAnimation();
+	// // Get ring animation going.
+	// setUpRingAnimation();
 	
-	setUpArrowHandlers();
+	// setUpArrowHandlers();
 }
 
 function setUpForMobile()
 {
-  	var triggerElements = document.querySelectorAll('.overlayTrigger');
-  	for (var i = 0; i < triggerElements.length; ++i) 
-	{
-    	var curElement = triggerElements[i];
-    	curElement.addEventListener('click', triggerClicked.bind(this, curElement), false);
-	}
+ //  	var triggerElements = document.querySelectorAll('.overlayTrigger');
+ //  	for (var i = 0; i < triggerElements.length; ++i) 
+	// {
+ //    	var curElement = triggerElements[i];
+ //    	curElement.addEventListener('click', triggerClicked.bind(this, curElement), false);
+	// }
 	
-	var overlay = document.getElementById('overlay');
-	overlay.addEventListener('click', hideOverlay.bind(this, overlay), false);
+	// var overlay = document.getElementById('overlay');
+	// overlay.addEventListener('click', hideOverlay.bind(this, overlay), false);
 	
-	// Get ring animation going.
-	setUpRingAnimation();
+	// // Get ring animation going.
+	// setUpRingAnimation();
 }
 
 function triggerClicked()

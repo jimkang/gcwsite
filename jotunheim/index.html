@@ -54,7 +54,12 @@
 		</div>
 			
 		<div class="eight columns" id="framedscreenshot">
-				<img src="img/glow_ring.png" class="triggerRing" />				
+			<div class="row" id="theContainerContents">
+				<img src="img/jotsview_screenshot.png" />
+			</div>
+			<div id="nav_arrow" class="row arrow">
+				<a href="javascript:nextPhotoTriggerClicked();"><h1><strong>&#9656;</strong></h1></a>
+			</div>
 		</div>
 
 		<div class="eight columns">
@@ -81,7 +86,7 @@
 			<h2 class="heading">Post everywhere.</h2>
 			<p>
 				Jotunheim can post your entries to:
-				<ul type="square">
+				<ul>
 					<li><a href="http://twitter.com">Twitter</a></li>
 					<li><a href="http://facebook.com">Facebook</a></li>
 					<li><a href="http://www.facebook.com/help/pages">Facebook Pages</a></li>
@@ -90,6 +95,7 @@
 					<li><a href="http://mlkshk.com">MLKSHK</a></li>
 				</ul>
 			</p>
+
 			<p>
 				It can post to <strong>all of them</strong> at once, just one of them, or <strong>none of them</strong>.
 			</p>
@@ -99,26 +105,6 @@
 			<p>
 				Jotunheim can post <strong>text</strong>, <strong>photos</strong>, and <strong>video</strong>.
 			</p>			
-		</div>
-									
-		<div class="eight columns">
-			<h2 class="heading">Keep your writing forever.</h2>
-			<p>In addition to flying cars and space karate, what makes the future interesting is that you don't quite know what's going to be around.</p>
-			<p>The dominant social networks might not be around anymore. Or perhaps you'll have quit some of them. But <em>you'll still have your entries in Jotunheim</em>, and you'll be able to easily <strong>browse</strong> and <strong>search</strong> them. You can quit <em>without fear</em>.</p>
-			<p>Or if you've moved on from Jotunheim, you'll have your entries in a text file that you can take anywhere because Jotunheim lets you <strong>export</strong> your entries in an open format.
-			</p>			
-
-			<p>
-				<h3>News</h3>
-				<br />
-				<script type="text/javascript" src="http://jotunblog.tumblr.com/js?callback=tumblr&num=1"></script>
-
-				<ol class="tumblr_posts">
-					<li class="tumblr_post tumblr_text_post">
-					<div class="tumblr_body"><a href="http://jotunblog.tumblr.com"><strong>More News</strong></a></div>
-					</li>
-				</ol>
-			</p>
 		</div>
 
 		<div class="eight columns">
@@ -138,6 +124,28 @@
 			</section>
 		</div>
 
+		<div class="eight columns">
+			<h2 class="heading">Keep your writing forever.</h2>
+			<p>In addition to flying cars and space karate, what makes the future interesting is that you don't quite know what's going to be around.</p>
+			<p>The dominant social networks might not be around anymore. Or perhaps you'll have quit some of them. But <em>you'll still have your entries in Jotunheim</em>, and you'll be able to easily <strong>browse</strong> and <strong>search</strong> them. You can quit <em>without fear</em>.</p>
+			<p>Or if you've moved on from Jotunheim, you'll have your entries in a text file that you can take anywhere because Jotunheim lets you <strong>export</strong> your entries in an open format.
+			</p>			
+
+			<p>
+				<h2>News</h2>
+				<br />
+				<script type="text/javascript" src="http://jotunblog.tumblr.com/js?callback=tumblr&num=1"></script>
+
+				<ol class="tumblr_posts">
+
+					<!-- Tumblr javascript inserts post here. -->
+
+					<li>
+						<a href="http://jotunblog.tumblr.com">More News</a>
+					</li>
+				</ol>
+			</p>
+		</div>
 
 	</div><!-- container -->
 
@@ -155,6 +163,8 @@
 	================================================== -->
 	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 	<script src="/javascripts/tabs.js"></script>
+	<script src="../js/mylibs/utilities.js"></script>
+  	<script src="../js/photo_gallery.js"></script>
 	
   <!-- mathiasbynens.be/notes/async-analytics-snippet -->
   <script>

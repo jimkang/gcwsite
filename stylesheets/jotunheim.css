@@ -29,89 +29,6 @@ a:hover { color: #6b6; }
 	padding-right: 1em;
 }
 
-/*
-
-#writeupstrip
-{
-	float: none;
-	padding-top: 32px;
-	padding-right: 40px;
-}
-
-#writeupstrip p
-{
-	padding-bottom: 1em;
-}
-#writeupstrip ul
-{
-	margin-top: 20px;
-	/* Watch out: HACK! Because #writeupstrip is float: none and flowing around #bigandsimplestrip, it really starts at the left of #container, not in a box that starts to the right of #bigandsimplestrip. Update this if #bigandsimplestrip's width changes. */
-/*	padding-left: 414px;
-}
-
-#writeupstrip ol
-{
-	list-style-type: square;	
-	padding-left: 414px;
-}
-
-#writeupstrip li
-{
-	margin-left: 20px;
-	padding-bottom: 0.3em;
-	type
-}
-
-#writeupstrip section
-{
-	margin-bottom: 1em;
-}
-
-
-#bigandsimplestrip
-{
-	float: left;
-	width: 400px;
-	height: 1700px;
-	padding-left: 28px;
-	padding-top: 32px;
-	padding-right: 22px;
-	/*
-	border: 1px dotted black;	
-	*/
-/*
-}
-
-.bigandsimpletextsection
-{
-	margin-left: 32px;
-	padding-right: 10px;
-}
-
-.leftcolumnsection
-{
-	margin-left: 16px;
-	padding-right: 10px;	
-}
-
-#betaExhortation .heading
-{
-	margin-bottom: 20px;
-}
-
-#betaExhortation p
-{
-	padding-right: 30px;
-}
-
-#appstorebadge
-{
-	display: block;
-	margin-top: 8px;
-	margin-left: 64px;
-	margin-bottom: 28px;
-}*/
-
 #framedscreenshot
 {
 	background: url(../../jotunheim/img/jotunheim_screenshot_in_frame.png);	
@@ -120,77 +37,27 @@ a:hover { color: #6b6; }
 	height: 757px;
 }
 
-#videosection
+#framedscreenshot img
 {
-	margin-left: 12px;
+	padding-left: 72px;
+	padding-top: 133px;
 }
 
-.overlayTrigger
+ul
 {
-	
+	list-style-type: square;
+	padding-left: 1em;
 }
 
-.triggerRing
+ul li
 {
-	display: block;
-	margin: 0px auto auto;
-	padding-top: 386px;
-	width: 16px;
-	height: 16px;
-	opacity: 0.6;
+	margin-left: 1em;
 }
 
-.expandedTriggerRing
+ol
 {
-	display: block;
-	margin: 0px auto auto;
-	padding-top: 362px;
-	width: 64px;
-	height: 64px;
-	opacity: 0.1;
-	-webkit-transition: all 1.5s linear;
-	-webkit-transition-property: width, height, padding-top, opacity;
-	-moz-transition: all 1.5s linear;
-	-moz-transition-property: width, height, padding-top, opacity;	
+	list-style-type: square;
 }
-
-/*
-.heading
-{
-	font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Helvetica, sans-serif;
-	font-weight: bold;
-}
-
-header .heading
-{
-	margin-left: 32px;
-	margin-right: 32px;
-	padding-top: 32px;	
-}
-
-h1
-{
-	font-size: 48px;
-	padding-top: 48px;
-	padding-bottom: 40px;
-}
-
-h2
-{
-	font-size: 30px;
-	padding-bottom: 40px;
-}
-
-h3
-{
-	font-size: 24px;	
-}
-
-footer
-{
-	margin-top: 40%;
-}
-*/
 
 /* Slideshow stuff. */
 
@@ -243,16 +110,6 @@ footer
 	z-index: 2;
 }
 
-#leftArrow
-{
-	left: 96px;
-}
-
-#rightArrow
-{
-	left: 639px;
-}
-
 #photo-container > .contents {
   	-webkit-transform-style: preserve-3d;
 	position: relative;
@@ -260,12 +117,9 @@ footer
 	height: 100%;
 }
 
-
- /* All Mobile Sizes (devices and browser) */
-
-@media only screen and (max-width: 767px) 
+/* Smaller than standard 960 (devices and browsers) */
+@media only screen and (max-width: 959px) 
 {
-
 	#framedscreenshot
 	{
 		position: relative;
@@ -274,6 +128,24 @@ footer
 		background-position: center;
 		height: 510px;	
 		/*margin-left: 83px;*/
+	}
+
+	#framedscreenshot img
+	{
+		padding-left: 83px;
+		padding-top: 101px;
+		width: 200px;
+		height: 300px;
+	}
+}
+
+ /* All Mobile Sizes (devices and browser) */
+
+@media only screen and (max-width: 767px) 
+{
+	#framedscreenshot img
+	{
+		padding-left: 111px;
 	}
 
 	#youtubeHolder p
@@ -292,5 +164,10 @@ footer
 		margin-right: 0px;
 		padding-left: 1em;
 		padding-right: 0em;
+	}	
+
+	#framedscreenshot img
+	{
+		padding-left: 52px;
 	}	
 }
