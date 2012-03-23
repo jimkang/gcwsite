@@ -107,18 +107,9 @@ function advanceThePhoto(indexIncrementFunction)
  	var newElement = createElementForAssetAtIndex(gPhotoIndex);
 	
   	contents.appendChild(newElement);
+
 	// Center element within contents div.
-	newElement.style.left = ((contents.offsetWidth - newElement.width)/2) + "px";
-	
-	var topNumber = ((contents.offsetHeight - newElement.height)/2);
-	
-	if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) 
-	{
-		// Account for the nav bar.
-		topNumber += 32;
-	}
-	
-	newElement.style.top = topNumber + "px";		
+	newElement.style.left = ((contents.offsetWidth - newElement.width)/2) + "px";	
 }
 
 function createElementForAssetAtIndex(assetIndex)
