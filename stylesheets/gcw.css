@@ -76,11 +76,3 @@ a, a:active
 	 }	 
  }
  
- @media only screen and (max-width: 479px) 
- {
-	 #abouttitle
-	 {
-	 	margin-left: 2em;
-		background: #f00;
-	 }	
- }
