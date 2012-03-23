@@ -37,10 +37,7 @@ a, a:active
 
 .aboutheading
 {
-    height: 40px;
-    padding-top: 22px;
-    padding-bottom: 22px;
-    font-size: 20px;
+	font-size: 22px;
 }
 
 .indented
@@ -67,17 +64,23 @@ a, a:active
 		 margin-left: 1em;
 		 margin-right: 1em;
 	 }
-	 
-	 .aboutheading
-	 {
-		 margin-left: 0.7em;
-		 margin-right: 0.7em;		 
-	 }
-	 
+	 	 
 	 .indented
 	 {
 		 padding-left: 2.5em;
 	 }
+	 
+	 #abouttitle
+	 {
+	 	margin-left: 0.5em;
+	 }	 
  }
  
- 
+ @media only screen and (max-width: 479px) 
+ {
+	 #abouttitle
+	 {
+	 	margin-left: 2em;
+		background: #f00;
+	 }	
+ }
