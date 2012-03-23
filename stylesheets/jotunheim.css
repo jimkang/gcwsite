@@ -59,20 +59,29 @@ ol
 	list-style-type: square;
 }
 
+.topbuffer
+{
+	padding-top: 1em;
+}
+
 /* Slideshow stuff. */
 
 .arrow
 {
 	display: block;
-	position: absolute;
-	top: 208px;
 	/* Without this, it considers this to be under the overlay and clicks won't be caught. */
 	z-index: 2;
+	margin-top: 150px;
 }
 
 /* Smaller than standard 960 (devices and browsers) */
 @media only screen and (max-width: 959px) 
 {
+	.topbuffer
+	{
+		padding-top: 0em;
+	}
+	
 	#framedscreenshot
 	{
 		position: relative;
@@ -90,12 +99,22 @@ ol
 		width: 200px;
 		height: 300px;
 	}
+	
+	.arrow
+	{
+		margin-top: 90px;
+	}		
 }
 
  /* All Mobile Sizes (devices and browser) */
 
 @media only screen and (max-width: 767px) 
 {
+	#framedscreenshot
+	{
+		height: 540px;
+	}
+	
 	#framedscreenshot img
 	{
 		padding-left: 111px;
@@ -106,6 +125,11 @@ ol
 		display: block;
 		margin-left: 6px;
 	}
+	
+	.arrow
+	{
+		margin-top: 80px;
+	}	
 }
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
@@ -117,11 +141,21 @@ ol
 		margin-right: 0px;
 		padding-left: 1em;
 		padding-right: 0em;
-	}	
-
+	}
+	
+	#framedscreenshot
+	{
+		display: inline;
+	}
+	
 	#framedscreenshot img
 	{
 		padding-left: 51px;
 		padding-top: 101px;	
+	}
+	
+	.arrow
+	{
+		margin-top: 82px;
 	}	
 }
