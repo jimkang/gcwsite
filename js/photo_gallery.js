@@ -17,16 +17,33 @@ if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)
 }
 else
 {
-	gPhotos = 
-	[
-		{filename: "jotsview_screenshot.png", width: 320, height: 480},
-		// {filename: "editorviewlandscape_screenshot.png", width: 480, height: 320},
-		{filename: "outletselection_screenshot.png", width: 320, height: 480},
-		{filename: "imageeditor_screenshot.png", width: 320, height: 480},
-		{filename: "jotsviewhelp_screenshot.png", width: 320, height: 480},
-		{filename: "dataliberation_screenshot.png", width: 320, height: 480},
-		{filename: "search_screenshot.png",width: 320, height: 480}
-	];
+	if (window.devicePixelRatio >= 2)
+	{
+		gPhotos = 
+		[
+			{filename: "jotsview_screenshot@2x.png", width: 320, height: 480},
+			// {filename: "editorviewlandscape_screenshot.png", width: 480, height: 320},
+			{filename: "outletselection_screenshot@2x.png", width: 320, height: 480},
+			{filename: "imageeditor_screenshot@2x.png", width: 320, height: 480},
+			{filename: "jotsviewhelp_screenshot@2x.png", width: 320, height: 480},
+			{filename: "dataliberation_screenshot@2x.png", width: 320, height: 480},
+			
+			{filename: "search_screenshot.png",width: 320, height: 480}
+		];		
+	}
+	else
+	{
+		gPhotos = 
+		[
+			{filename: "jotsview_screenshot.png", width: 320, height: 480},
+			// {filename: "editorviewlandscape_screenshot.png", width: 480, height: 320},
+			{filename: "outletselection_screenshot.png", width: 320, height: 480},
+			{filename: "imageeditor_screenshot.png", width: 320, height: 480},
+			{filename: "jotsviewhelp_screenshot.png", width: 320, height: 480},
+			{filename: "dataliberation_screenshot.png", width: 320, height: 480},
+			{filename: "search_screenshot.png",width: 320, height: 480}
+		];		
+	}
 }
 
 var gPhotoIndex = 0;
