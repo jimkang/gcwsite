@@ -103,7 +103,12 @@ ol
 	.arrow
 	{
 		margin-top: 90px;
-	}		
+	}
+	
+	.colsometimesneedsboost
+	{
+		height: 600px;
+	}
 }
 
  /* All Mobile Sizes (devices and browser) */
@@ -129,6 +134,11 @@ ol
 	.arrow
 	{
 		margin-top: 80px;
+	}
+	
+	.colsometimesneedsboost
+	{
+		height: auto;
 	}	
 }
 
